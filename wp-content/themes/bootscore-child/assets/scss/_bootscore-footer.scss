@@ -1,0 +1,68 @@
+/**
+* Footer
+*/
+footer {
+  &.bootscore-footer {
+    background: $dark;
+    color: $light;
+    padding-top: $fit-space-section--standar;
+    padding-bottom: $fit-space-section--standar;
+
+    .row-primary {
+      font-family: $font-family-alternative;
+
+      .menu {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: $fit-space--small;
+  
+        li {
+          a {
+            color: white;
+            text-transform: uppercase;
+
+            &:hover {
+              opacity: $op-min;
+            }
+          }
+        }
+
+        &.wp-block-list {
+          gap: $fit-space--small-x;
+          li {
+            a {
+              text-transform: inherit;
+            }
+          }
+        }
+      }
+    }
+
+    .row-secondary {
+      align-items: center;
+      font-size: $f-size-medium;
+      padding-top: $fit-space-section--med;
+
+      p {
+        margin: 0;
+      }
+
+      #footer-menu {
+        .menu-item {
+          border-left: solid 1px $light;
+        }
+
+      }
+    }
+
+    .footer_widget {
+      .widget-title {
+        font-weight: $f-bold;
+        font-size: $f-size-base;
+        margin-block-end: $fit-space--medium;
+      }
+    }
+    
+  }
+}

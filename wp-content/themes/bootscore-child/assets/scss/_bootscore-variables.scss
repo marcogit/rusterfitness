@@ -1,0 +1,120 @@
+// Variables
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1640px,
+);
+
+/* space-mono - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/spacemono-regular-webfont.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* space-mono-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/spacemono-bold-webfont.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* space-mono-italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Space Mono";
+  font-style: italic;
+  font-weight: 400;
+  src: url("../fonts/SpaceMono-Italic.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* space-mono-italic-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Space Mono";
+  font-style: italic;
+  font-weight: 700;
+  src: url("../fonts/SpaceMono-BoldItalic.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* inter-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Inter18pt-Regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* inter-regular-italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 400;
+  src: url("../fonts/Inter18pt-Italic.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* inter-blod - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/Inter18pt-Bold.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+$font-family-base: "Inter", sans-serif;
+$font-family-alternative: "Space Mono", sans-serif;
+
+$primary: #1701fe;
+$secondary: #bbb2ff;
+$light: #ffffff;
+$dark: #000000;
+$warning: #ff0000;
+$info: #b2b2b2;
+
+$f-size-base: 1rem; //16px
+$f-size-medium: 1.125rem; //18px
+$f-size-big: 1.5rem; //24px
+$f-size-extrabig: 4.375rem; //70px
+$f-size-small: 0.75rem;
+
+
+$f-lh-titles: 1em;
+$f-lh-titles--sm: 1.12em;
+$f-lh-base: 1.375em;
+$f-lh-small: 1.25em;
+
+$f-regular: 400;
+$f-bold: 700;
+
+$fit-content: 1600px;
+$fit-h-pageheader: 600px;
+$fit-w-text: 1024px;
+
+$fit-space: 1.5rem;
+$fit-space-n: -1.5rem;
+$fit-space--small-xx: 0.2rem;
+$fit-space--small-x: 0.4rem;
+$fit-space--small: 1rem;
+$fit-space--medium: 1.2rem;
+$fit-space--big: 2.5rem;
+
+$fit-title-space: 1.85rem;
+
+$fit-space-section--standar: 6.25rem; //100px
+$fit-space-section--med: 3.75rem; //60px
+$fit-space-section--small: 6.25rem;
+
+$border-radius--normal: 10px;
+$border-radius--max: 300px;
+
+$op-min: 0.75;
+$op-med: 0.5;
+$op-max: 0.2;
+
+$transition-normal: all 0.1s ease-in-out;

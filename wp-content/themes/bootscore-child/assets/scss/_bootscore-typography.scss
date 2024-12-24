@@ -1,0 +1,48 @@
+/**
+* Typography
+*/
+h1,
+.h1,
+h2,
+.h2 {
+  font-size: $f-size-extrabig;
+  line-height: $f-lh-titles;
+  margin-block-end: $fit-title-space !important;
+  font-family: $font-family-alternative;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+h3,
+.h3 {
+  font-family: $font-family-alternative;
+  line-height: $f-lh-titles;
+  margin-block-end: $fit-title-space !important;
+  font-weight: 100;
+  margin-block-end: $fit-space--small !important;
+}
+
+h4,
+.h4 {
+  font-family: $font-family-alternative;
+  margin-bottom: 0 !important;
+  margin-bottom: $fit-space--small-x !important;
+}
+
+h5,
+.h5 {
+  font-family: $font-family-alternative;
+  font-size: $f-size-base;
+}
+
+h6,
+.h6 {
+  font-family: $font-family-alternative;
+  font-size: $f-size-medium;
+  text-transform: uppercase;
+}
+
+a {
+  transition: $transition-normal;
+  text-decoration: none;
+}

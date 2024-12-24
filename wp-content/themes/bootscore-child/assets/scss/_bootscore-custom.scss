@@ -1,0 +1,176 @@
+/*!
+ * Bootscore custom styles
+ */
+
+// Add your own code here!
+// Because this file is compiled after Bootstrap, you're also able to use Bootstrap mixins for better code.
+// Some examples can be found here: https://bootscore.me/documentation/bootstrap-css-sass
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: $f-size-base;
+  line-height: $f-lh-base;
+  position: relative;
+}
+
+// PAGE HEADER
+.page-header {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: $fit-h-pageheader;
+
+  .page-header--subtitle {
+    max-width: $fit-w-text;
+  }
+
+  .page-header--sticker {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    white-space: nowrap;
+    font-size: $f-size-medium;
+    font-family: $font-family-alternative;
+    text-transform: uppercase;
+    display: block;
+    padding: $fit-space 0;
+    position: relative;
+
+    &::before,
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 25px;
+        height: 15px;
+        background: url(../img/tick-blue.svg) no-repeat  0 0;
+        right: 0;
+    }
+
+    &::before {
+        top: 0;
+    }
+
+    &::after {
+        bottom: 0;
+    }
+  }
+
+  .post-thumbnail {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    overflow: hidden;
+
+    img {
+      object-fit: cover; /* Activa el efecto de recorte */
+      object-position: center; /* Centra la imagen en el contenedor */
+      margin: 0;
+      border-radius: 0 !important;
+      width: 100vw;
+      max-width: inherit;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    opacity: $op-med;
+  }
+
+  .wp-block-columns {
+    position: relative;
+    z-index: 3;
+    align-items: center !important;
+  }
+
+  &.page-header--dark {
+    color: white;
+    &::after {
+      background: $dark;
+    }
+  }
+
+  &.page-header--seo {
+    overflow: hidden;
+    min-height: inherit;
+    padding: 0 !important;
+    height: 0px;
+    opacity: 0;
+  }
+}
+
+// Breadcrumb
+nav {
+  &[aria-label="breadcrumb"] {
+    font-family: $font-family-alternative;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 0;
+    background: transparent !important;
+    padding: $fit-space !important;
+    font-size: $f-size-base;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include media-breakpoint-down(sm) {
+      justify-content: flex-start;
+      margin-top: $fit-space-n !important;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    ol {
+      width: 100%;
+      max-width: 1600px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+
+      .breadcrumb-item {
+        color: $dark;
+
+        &::before {
+          content: "";
+          background: url(../img/mini-arrow.svg) no-repeat 0 50%;
+          margin-right: $fit-space--small-x;
+          margin-left: $fit-space--small-xx;
+        }
+
+        a {
+          .visually-hidden {
+            width: auto !important;
+            height: auto !important;
+            margin: 0 !important;
+            position: relative !important;
+          }
+
+          .fa-house {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Social Links
+.wp-block-social-links {
+  border-top: solid 1px white;
+  padding: $fit-space 0;
+
+  .wp-social-link {
+    border-radius: 0 !important;
+  }
+}
