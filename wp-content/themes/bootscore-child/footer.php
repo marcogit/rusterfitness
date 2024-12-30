@@ -27,7 +27,9 @@ defined('ABSPATH') || exit;
       <div class="row row-primary">
         <div class="col">
           <?php if (is_active_sidebar('footer-top')) : ?>
-            <?php dynamic_sidebar('footer-top'); ?>
+            <div class="footer-summary">
+              <?php dynamic_sidebar('footer-top'); ?>
+            </div>
           <?php endif; ?>
         </div>
 
@@ -49,20 +51,22 @@ defined('ABSPATH') || exit;
           <?php endif; ?>
         </div>
 
-        <div class="<?= apply_filters('bootscore/class/footer/col', 'col-6 col-lg-2', 'footer-4'); ?>">
+        <div class="<?= apply_filters('bootscore/class/footer/col', 'col-6 col-lg-1', 'footer-4'); ?>">
           <?php if (is_active_sidebar('footer-4')) : ?>
             <?php dynamic_sidebar('footer-4'); ?>
           <?php endif; ?>
         </div>
         <div class="col-auto">
-
+          <img src="/wp-content/themes/bootscore-child/assets/img/logo-footer.png" alt="Trusted Shops" class="img-guarantee">
         </div>
 
       </div>
       <div class="row row-secondary">
         <div class="col-lg-4">
-        <div class="bootscore-copyright">
-          <p><span class="cr-symbol">&copy;</span>&nbsp;<?= date('Y'); ?> Ruster Fitness</div></p>
+          <div class="bootscore-copyright">
+            <p><span class="cr-symbol">&copy;</span>&nbsp;<?= date('Y'); ?> Ruster Fitness
+          </div>
+          </p>
         </div>
         <div class="col justify-content-center d-flex align-items-center justify-content-center">
           <?php if (is_active_sidebar('footer-info')) : ?>
@@ -70,7 +74,9 @@ defined('ABSPATH') || exit;
           <?php endif; ?>
           <?php get_template_part('template-parts/footer/footer-menu'); ?>
         </div>
-        <div class="col-lg-4"></div>
+        <div class="col-lg-4 col-pay-brand">
+          <img src="/wp-content/themes/bootscore-child/assets/img/pay-brands.png" alt="Trusted Shops" class="img-payment">
+        </div>
       </div>
 
       <!-- Bootstrap 5 Nav Walker Footer Menu -->

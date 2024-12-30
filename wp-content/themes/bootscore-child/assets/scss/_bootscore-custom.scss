@@ -172,5 +172,14 @@ nav {
 
   .wp-social-link {
     border-radius: 0 !important;
+
+    .wp-block-social-link-anchor {
+      padding: $fit-space--small;
+      
+      svg {
+        width: $fit-space--big;
+        height: $fit-space--big;
+      }
+    }
   }
 }

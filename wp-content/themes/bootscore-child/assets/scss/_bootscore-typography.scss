@@ -46,3 +46,18 @@ a {
   transition: $transition-normal;
   text-decoration: none;
 }
+
+ul {
+  &#footer-menu {
+    margin-left: $fit-space--small-x;
+    .menu-item {
+      border-left: solid 1px $light;
+      a {
+        list-style: none;
+        padding: 0 $fit-space--small-x;
+        margin: 0;
+        text-decoration: underline;
+      }
+    }
+  }
+}

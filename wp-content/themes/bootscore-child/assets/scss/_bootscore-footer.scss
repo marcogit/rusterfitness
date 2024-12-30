@@ -7,6 +7,62 @@ footer {
     color: $light;
     padding-top: $fit-space-section--standar;
     padding-bottom: $fit-space-section--standar;
+    position: relative;
+    overflow: hidden;
+
+    .bootscore-footer-columns {
+      position: relative;
+      z-index: 3;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      left: 0;
+      right: 0;
+      bottom: $fit-space-n;
+      height: 50%;
+    }
+
+    &::before {
+      content: "";
+      background: $gradient-to-dark;
+      z-index: 2;
+    }
+
+    &::after {
+      content: "";
+      background: url("../img/footer-claim.svg") repeat-x center bottom;
+      z-index: 1;
+    }
+
+
+    .img-guarantee {
+      width: 100%;
+      max-width: 78px;
+      height: auto;
+    }
+
+    .col-pay-brand {
+      display: flex;
+      justify-content: flex-end;
+
+      .img-payment {
+        width: 100%;
+        max-width: 365px;
+        height: auto;
+      }
+    }
+
+    .footer-summary {
+      padding-right: 8%;
+
+      .wp-block-list {
+        padding-left: $fit-space--big;
+      }
+    }
 
     .row-primary {
       font-family: $font-family-alternative;
@@ -43,16 +99,10 @@ footer {
       align-items: center;
       font-size: $f-size-medium;
       padding-top: $fit-space-section--med;
+      padding-bottom: $fit-space-section--med;
 
       p {
         margin: 0;
-      }
-
-      #footer-menu {
-        .menu-item {
-          border-left: solid 1px $light;
-        }
-
       }
     }
 

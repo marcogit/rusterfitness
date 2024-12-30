@@ -6,10 +6,8 @@
  * @version 6.0.0
  */
 
-
 // Exit if accessed directly
 defined('ABSPATH') || exit;
-
 
 /**
  * Enqueue scripts and styles
@@ -28,4 +26,13 @@ function bootscore_child_enqueue_styles() {
   // Get modification time. Enqueue file with modification date to prevent browser from loading cached scripts when file content changes. 
   $modificated_CustomJS = date('YmdHi', filemtime(get_stylesheet_directory() . '/assets/js/custom.js'));
   wp_enqueue_script('custom-js', get_stylesheet_directory_uri() . '/assets/js/custom.js', array('jquery'), $modificated_CustomJS, false, true);
+}
+
+/**
+ * Register custom menus
+ */
+add_action('init', 'register_custom_menus');
+function register_custom_menus() {
+  // Register Header Top Menu
+  register_nav_menu('header-top', __('Header Top Menu', 'bootscore-child'));
 }

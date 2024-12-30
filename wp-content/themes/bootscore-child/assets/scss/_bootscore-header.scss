@@ -1,0 +1,51 @@
+/**
+* Header
+*/
+header {
+  &#masthead {
+    .header-top {
+      border-bottom: solid 1px $light;
+      padding: $fit-space--small 0;
+      background: $dark-op;
+
+      .header-top-menu{
+        display: flex;
+        gap: $fit-space--small;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+  
+        li {
+          a{
+            font-family: $font-family-alternative;
+            font-size: $f-size-min;
+            color:  $light;
+          }
+        }
+      }
+    }
+
+    #nav-main {
+      padding: $fit-space 0;
+    }
+    
+    #bootscore-navbar {
+      gap: $fit-space--small;
+      .menu-item {
+        .nav-link {
+          font-family: $font-family-alternative;
+          font-size: $f-size-medium;
+          font-weight: 400;
+          text-transform: uppercase;
+          padding: 0 $fit-space--small-x;
+          color:  $light;
+          transition: $transition-normal;
+
+          &:hover {
+            opacity: $op-med;
+          }
+        }
+      }
+    }
+  }
+}

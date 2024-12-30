@@ -74,14 +74,18 @@ $primary: #1701fe;
 $secondary: #bbb2ff;
 $light: #ffffff;
 $dark: #000000;
+$dark-op: rgba(0,0,0,0.4);
 $warning: #ff0000;
 $info: #b2b2b2;
+
+$gradient-to-dark: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,1));
 
 $f-size-base: 1rem; //16px
 $f-size-medium: 1.125rem; //18px
 $f-size-big: 1.5rem; //24px
 $f-size-extrabig: 4.375rem; //70px
-$f-size-small: 0.75rem;
+$f-size-min: 0.875rem; //14px
+$f-size-small: 0.75rem; //12px
 
 
 $f-lh-titles: 1em;
