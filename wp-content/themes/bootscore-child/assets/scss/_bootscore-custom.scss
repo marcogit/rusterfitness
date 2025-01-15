@@ -38,21 +38,21 @@ body {
 
     &::before,
     &::after {
-        content: "";
-        display: block;
-        position: absolute;
-        width: 25px;
-        height: 15px;
-        background: url(../img/tick-blue.svg) no-repeat  0 0;
-        right: 0;
+      content: "";
+      display: block;
+      position: absolute;
+      width: 25px;
+      height: 15px;
+      background: url(../img/tick-blue.svg) no-repeat 0 0;
+      right: 0;
     }
 
     &::before {
-        top: 0;
+      top: 0;
     }
 
     &::after {
-        bottom: 0;
+      bottom: 0;
     }
   }
 
@@ -165,6 +165,208 @@ nav {
   }
 }
 
+//Block - Direct Link
+.directlink-block {
+  a {
+    display: block;
+
+    .directlink-block__inner {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: $fit-space;
+      padding: $fit-space--medium;
+      border: $dark-op solid 1px;
+      transition: $transition-normal;
+
+      img {
+        width: 138px;
+        height: auto;
+      }
+
+      .directlink-block__content {
+        .block-title {
+          text-transform: uppercase;
+          color: $primary;
+          font-weight: $f-bold;
+        }
+
+        .block-description {
+          margin: 0;
+        }
+      }
+    }
+
+    &:hover {
+      .directlink-block__inner {
+        border-color: $dark;
+      }
+    }
+  }
+}
+
+.has-dark-background-color {
+  .directlink-block {
+    a {
+      .directlink-block__inner {
+        border: $light-op solid 1px;
+
+        .directlink-block__content {
+          .block-description {
+            color: $light;
+          }
+        }
+      }
+
+      &:hover {
+        .directlink-block__inner {
+          border-color: $light;
+        }
+      }
+    }
+  }
+}
+
+//Block - Direct Link Big
+.directlinkbig-block {
+  height: 100%;
+  a {
+    display: block;
+    height: 100%;
+    color: white;
+
+    .directlink-block__inner {
+      background-size: cover;
+      padding: $fit-space;
+      display: flex;
+      height: 100%;
+      flex-wrap: wrap;
+      align-items: end;
+      justify-content: flex-start;
+      position: relative;
+      padding-top: 50%;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: $dark;
+        opacity: $op-med;
+        z-index: 1;
+        transition: $transition-normal;
+      }
+
+      .directlink-block__content {
+        border-left: solid 6px $light;
+        padding-left: $fit-space--small;
+        position: relative;
+        z-index: 2;
+
+        .block-description {
+          margin-top: $fit-space;
+        }
+      }
+    }
+
+    &:hover {
+      .directlink-block__inner {
+        &::before {
+          opacity: $op-min;
+        }
+      }
+    }
+  }
+
+  &.background-blue {
+    .directlink-block__inner {
+      &::before {
+        background: $primary;
+      }
+    }
+  }
+}
+
+//Block - Auto Carrousel Bar
+.auto-carrousel-bar {
+  background: $primary;
+  color: $dark;
+  overflow: hidden;
+  padding: $fit-space 0;
+
+  .auto-carrousel-bar__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: inherit;
+    
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      white-space: nowrap;
+      justify-content: center;
+      align-items: center;
+      font-family: $font-family-alternative;
+      font-size: $f-size-big;
+      gap: $fit-space--small;
+      animation: scroll 180s linear infinite;
+
+      li {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          max-width: inherit;
+          width: auto;
+        }
+      }
+    }
+  }
+
+  &.option-02 {
+    color: $light;
+
+    img {
+      filter: invert(1);
+    }
+  }
+}
+
+//Block - Logo Swiper
+.logoSwiper {
+  padding-top: $fit-space;
+
+  .swiper-wrapper {
+
+    .swiper-slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: $max-content--small;
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
 // Social Links
 .wp-block-social-links {
   border-top: solid 1px white;
@@ -175,7 +377,7 @@ nav {
 
     .wp-block-social-link-anchor {
       padding: $fit-space--small;
-      
+
       svg {
         width: $fit-space--big;
         height: $fit-space--big;

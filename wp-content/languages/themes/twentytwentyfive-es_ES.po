@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - Twenty Twenty-Five package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-11-28 07:29:33+0000\n"
+"PO-Revision-Date: 2024-12-19 14:12:27+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1264,7 +1264,7 @@ msgstr "Escrito por"
 #: patterns/template-query-loop.php:31
 msgctxt "Message explaining that there are no results returned from a search."
 msgid "Sorry, but nothing was found. Please try a search with different keywords."
-msgstr "Lo sentimos, no se ha encontrado nada. Por favor, intenta buscar con otras palabras clave."
+msgstr "Lo siente, no se ha encontrado nada. Por favor, intenta buscar con otras palabras clave."
 
 #: patterns/hidden-sidebar.php:37
 #: patterns/template-home-posts-grid-news-blog.php:34

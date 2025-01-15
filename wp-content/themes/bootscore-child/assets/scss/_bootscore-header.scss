@@ -8,6 +8,10 @@ header {
       padding: $fit-space--small 0;
       background: $dark-op;
 
+      @include media-breakpoint-down(xl) {
+        display: none;
+      }
+
       .header-top-menu{
         display: flex;
         gap: $fit-space--small;
@@ -27,6 +31,48 @@ header {
 
     #nav-main {
       padding: $fit-space 0;
+
+      .header-actions {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: $fit-space--small;
+
+        .btn-outline-secondary {
+          border-color: transparent;
+          color: white;
+          padding: 0;
+          border-radius: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          height: 40px;
+
+          &.search-toggler {
+            border: solid 2px $light;
+          }
+        }
+
+        .searchform {
+          border: solid 2px $light;
+
+          .search-field {
+            color: white;
+            background: transparent;
+            border-color: transparent;
+            font-size: $f-size-base;
+
+            &::placeholder {
+              color: $light;
+            }
+
+            &:focus {
+              box-shadow: none;
+            }
+          }
+        }
+      }
     }
     
     #bootscore-navbar {

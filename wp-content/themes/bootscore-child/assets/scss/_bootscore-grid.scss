@@ -79,4 +79,19 @@
   &.wp-block-group--standar {
     padding-bottom: $fit-space-section--standar;
   }
+
+  &.section-small {
+    padding-top: $fit-space-section--med;
+    padding-bottom: $fit-space-section--med;
+  }
+}
+
+.wp-block-cover {
+  &.alignfull {
+    height: 100%;
+
+    .wp-block-cover__inner-container {
+      max-width: $max-content--medium;
+    }
+  }
 }

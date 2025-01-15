@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Google for WooCommerce - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-12-03 19:22:33+0000\n"
+"PO-Revision-Date: 2024-12-23 16:04:49+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,31 @@ msgstr ""
 "X-Generator: GlotPress/4.0.1\n"
 "Language: es\n"
 "Project-Id-Version: Plugins - Google for WooCommerce - Stable (latest release)\n"
+
+#: src/API/Site/Controllers/MerchantCenter/ShippingTimeController.php:324
+msgid "The minimum shipping time cannot be greater than the maximum shipping time."
+msgstr "El tiemo mínimo de envío no puede ser mayor que el tiempo máximo de envío."
+
+#: src/API/Site/Controllers/MerchantCenter/ShippingTimeController.php:320
+msgid "Shipping times cannot be negative."
+msgstr "Los tiempos de envío no pueden ser negativos."
+
+#. translators: 1: Parameter, 2: Type name.
+#: src/API/Site/Controllers/MerchantCenter/ShippingTimeController.php:314
+msgid "%1$s is not of type %2$s."
+msgstr "%1$s no es del tipo %2$s."
+
+#: src/API/Site/Controllers/MerchantCenter/ShippingTimeController.php:278
+msgid "The maximum shipping time in days."
+msgstr "El tiempo máximo de envío en días."
+
+#: src/API/Site/Controllers/MerchantCenter/ShippingTimeController.php:272
+msgid "The minimum shipping time in days."
+msgstr "El tiempo mínimo de envío en días."
+
+#: src/API/Site/Controllers/MerchantCenter/SettingsController.php:159
+msgid "The number of shipping rates in WC ready to be used in the Merchant Center."
+msgstr "El número de tarifas de envíos en WC disponibles para usar en el Merchant Center."
 
 #. Translators: %1$d is the number of migrated GTINS and %2$d is the execution
 #. time in seconds.
@@ -39,7 +64,7 @@ msgstr "No se puede programar la Migración GTIN."
 msgid "The Global Trade Item Number (GTIN) for your item can now be entered on the \"Inventory\" tab"
 msgstr "Ahora puedes introducir el Número Global de Artículo Comercial (GTIN) de tu artículo en la pestaña «Inventario»."
 
-#: src/API/Site/Controllers/Ads/CampaignController.php:417
+#: src/API/Site/Controllers/Ads/CampaignController.php:399
 msgid "The name of the label to assign to the campaign."
 msgstr "El nombre de la etiqueta para asignar a la campaña."
 
@@ -159,7 +184,7 @@ msgstr "[%1$s] Acción de compra de Google for WooCommerce"
 
 #. Plugin Name of the plugin
 #: google-listings-and-ads.php src/Admin/ProductBlocksService.php:148
-#: src/Internal/DependencyManagement/ThirdPartyServiceProvider.php:83
+#: src/Internal/DependencyManagement/ThirdPartyServiceProvider.php:82
 #: src/Menu/Dashboard.php:37 src/Menu/GetStarted.php:37
 #: src/MultichannelMarketing/GLAChannel.php:104
 #: views/attributes/variations-form.php:22
@@ -348,31 +373,31 @@ msgstr "Error al recuperar grupos de activos por url final: %s"
 msgid "Error retrieving asset groups assets: %s"
 msgstr "Error al recuperar grupos de activos: %s"
 
-#: src/API/Google/AdsAssetGroup.php:429
+#: src/API/Google/AdsAssetGroup.php:425
 msgid "Invalid asset group ID"
 msgstr "ID de grupo de activos no válido"
 
 #. translators: %s Error message
-#: src/API/Google/AdsAssetGroup.php:340
+#: src/API/Google/AdsAssetGroup.php:336
 msgid "Error editing asset group: %s"
 msgstr "Error al editar el grupo de activos: %s"
 
-#: src/API/Google/AdsAssetGroup.php:334
+#: src/API/Google/AdsAssetGroup.php:330
 msgid "Each image type (landscape, square, portrait or logo) cannot contain duplicated images."
 msgstr "Cada tipo de imagen (horizontal, cuadrada, vertical o logotipo) no puede contener imágenes duplicadas."
 
 #. translators: %s Error message
-#: src/API/Google/AdsAssetGroup.php:266
+#: src/API/Google/AdsAssetGroup.php:262
 msgid "Error retrieving asset groups: %s"
 msgstr "Error al recuperar grupos de activos: %s"
 
 #. translators: %s Error message
-#: src/API/Google/AdsAssetGroup.php:121
+#: src/API/Google/AdsAssetGroup.php:116
 msgid "Error creating asset group: %s"
 msgstr "Error al crear el grupo de activos: %s"
 
 #. translators: %s: current date time.
-#: src/API/Google/AdsAssetGroup.php:105
+#: src/API/Google/AdsAssetGroup.php:100
 msgid "PMax %s"
 msgstr "PMax %s"
 
@@ -619,11 +644,11 @@ msgstr "Alto"
 msgid "Whether the campaign has been converted"
 msgstr "Si la campaña se ha convertido"
 
-#: src/API/Site/Controllers/Ads/CampaignController.php:338
+#: src/API/Site/Controllers/Ads/CampaignController.php:320
 msgid "Exclude removed campaigns."
 msgstr "Excluye las campañas eliminadas."
 
-#: src/API/Google/Query/AdsQuery.php:79
+#: src/API/Google/Query/AdsQuery.php:81
 msgid "No result from query"
 msgstr "No hay resultado de la consulta"
 
@@ -687,7 +712,7 @@ msgstr "Vuelve a conectar tu cuenta de Google."
 msgid "Please reconnect your Jetpack account."
 msgstr "Vuelve a conectar tu cuenta de Jetpack, por favor."
 
-#: src/API/Site/Controllers/Ads/CampaignController.php:384
+#: src/API/Site/Controllers/Ads/CampaignController.php:366
 msgid "Campaign type."
 msgstr "Tipo de campaña."
 
@@ -737,11 +762,11 @@ msgstr "Array de tarifas de envío para crear."
 msgid "Country is not supported"
 msgstr "No se admite el país"
 
-#: src/API/Site/Controllers/Ads/CampaignController.php:405
+#: src/API/Site/Controllers/Ads/CampaignController.php:387
 msgid "The locations that an Ads campaign is targeting in ISO 3166-1 alpha-2 format."
 msgstr "Las ubicaciones a las que se dirige una campaña de Ads en formato ISO 3166-1 alfa-2."
 
-#: src/API/Site/Controllers/Ads/CampaignController.php:397
+#: src/API/Site/Controllers/Ads/CampaignController.php:379
 msgid "Country code of sale country in ISO 3166-1 alpha-2 format."
 msgstr "Código del país de venta en formato ISO 3166-1 alfa-2."
 
@@ -758,7 +783,7 @@ msgstr "No hay moneda disponible para la cuenta de Ads."
 msgid "Unable to retrieve report data: %s"
 msgstr "No se pueden recuperar los datos del informe: %s"
 
-#: src/API/Google/AdsCampaign.php:647
+#: src/API/Google/AdsCampaign.php:639
 msgid "Invalid geo target location ID"
 msgstr "ID de ubicación de geoobjetivo no válido"
 
@@ -930,7 +955,7 @@ msgstr "Fecha de disponibilidad"
 msgid "Complete setup to get your products listed on Google for free."
 msgstr "Completa la configuración para que tus productos se listen en Google de forma gratuita."
 
-#: src/Notes/SetupCampaign.php:81 js/build/commons.js:10 js/build/commons.js:71
+#: src/Notes/SetupCampaign.php:81 js/build/commons.js:10 js/build/commons.js:72
 #: js/build/product-feed.js:1 js/build/settings.js:1
 msgid "Learn more"
 msgstr "Más información"
@@ -1338,13 +1363,13 @@ msgstr "20 minutos"
 msgid "Product title"
 msgstr "Título de producto"
 
-#: src/Menu/Reports.php:25 js/build/commons.js:59 js/build/index.js:25
+#: src/Menu/Reports.php:25 js/build/commons.js:60 js/build/index.js:25
 msgid "Reports"
 msgstr "Informes"
 
 #: views/meta-box/channel_visibility.php:95
-#: views/meta-box/coupon_channel_visibility.php:163 js/build/commons.js:34
-#: js/build/setup-mc.js:1
+#: views/meta-box/coupon_channel_visibility.php:163 js/build/commons.js:35
+#: js/build/onboarding.js:1
 msgid "Complete setup"
 msgstr "Configuración completa"
 
@@ -1356,7 +1381,7 @@ msgstr "Asistente de configuración de anuncios"
 msgid "MC Setup Wizard"
 msgstr "Asistente de configuración de Merchant Center"
 
-#: src/Menu/ProductFeed.php:25 js/build/commons.js:59 js/build/index.js:25
+#: src/Menu/ProductFeed.php:25 js/build/commons.js:60 js/build/index.js:25
 #: js/build/product-feed.js:13
 msgid "Product Feed"
 msgstr "Feed de productos"
@@ -1401,7 +1426,7 @@ msgstr "Documentación"
 msgid "Get Started"
 msgstr "Primeros pasos"
 
-#: src/Admin/Admin.php:208 src/Menu/Settings.php:25 js/build/commons.js:59
+#: src/Admin/Admin.php:208 src/Menu/Settings.php:25 js/build/commons.js:60
 #: js/build/index.js:25
 msgid "Settings"
 msgstr "Ajustes"
@@ -1441,32 +1466,32 @@ msgstr "La URL para establecer la conexión con Google."
 msgid "Successfully marked Ads setup as completed."
 msgstr "Marcada correctamente la configuración de anuncios como completada."
 
-#: src/API/Site/Controllers/Ads/CampaignController.php:390
+#: src/API/Site/Controllers/Ads/CampaignController.php:372
 msgid "Daily budget amount in the local currency."
 msgstr "Importe del presupuesto diario en la moneda local."
 
-#: src/API/Site/Controllers/Ads/CampaignController.php:369
+#: src/API/Site/Controllers/Ads/CampaignController.php:351
 msgid "Descriptive campaign name."
 msgstr "Nombre descriptivo de la campaña."
 
-#: src/API/Site/Controllers/Ads/CampaignController.php:296
+#: src/API/Site/Controllers/Ads/CampaignController.php:278
 msgid "Successfully deleted campaign."
 msgstr "Campaña retirada correctamente."
 
-#: src/API/Site/Controllers/Ads/CampaignController.php:261
+#: src/API/Site/Controllers/Ads/CampaignController.php:243
 msgid "Successfully edited campaign."
 msgstr "Campaña editada correctamente."
 
-#: src/API/Site/Controllers/Ads/CampaignController.php:231
+#: src/API/Site/Controllers/Ads/CampaignController.php:213
 msgid "Invalid edit data."
 msgstr "Datos no válidos."
 
-#: src/API/Site/Controllers/Ads/CampaignController.php:204
+#: src/API/Site/Controllers/Ads/CampaignController.php:186
 msgid "Campaign is not available."
 msgstr "La campaña no está disponible."
 
 #. translators: %s: current date time.
-#: src/API/Site/Controllers/Ads/CampaignController.php:150
+#: src/API/Site/Controllers/Ads/CampaignController.php:132
 msgid "Campaign %s"
 msgstr "Campaña %s"
 
@@ -1482,7 +1507,7 @@ msgstr "Importe gastado."
 msgid "Sales amount."
 msgstr "Importe de las ventas."
 
-#: src/API/Site/Controllers/Ads/CampaignController.php:377
+#: src/API/Site/Controllers/Ads/CampaignController.php:359
 #: src/API/Site/Controllers/Ads/ReportsController.php:156
 msgid "Campaign status."
 msgstr "Estado de la campaña."
@@ -1491,7 +1516,7 @@ msgstr "Estado de la campaña."
 msgid "Campaign name."
 msgstr "Nombre de la campaña."
 
-#: src/API/Site/Controllers/Ads/CampaignController.php:363
+#: src/API/Site/Controllers/Ads/CampaignController.php:345
 #: src/API/Site/Controllers/Ads/ReportsController.php:145
 msgid "ID number."
 msgstr "Número de ID."
@@ -1787,7 +1812,7 @@ msgstr "Array de códigos de país en formato ISO 3166-1 alfa-2."
 msgid "Token to retrieve the next page."
 msgstr "Token para recuperar la página siguiente."
 
-#: src/API/Site/Controllers/Ads/CampaignController.php:344
+#: src/API/Site/Controllers/Ads/CampaignController.php:326
 #: src/API/Site/Controllers/BaseReportsController.php:89
 #: src/API/Site/Controllers/MerchantCenter/IssuesController.php:208
 #: src/API/Site/Controllers/MerchantCenter/ProductFeedController.php:169
@@ -1869,40 +1894,40 @@ msgstr "Respuesta no válida al recuperar el estado"
 msgid "Unable to connect Google account"
 msgstr "No ha sido posible conectar a la cuenta de Google"
 
-#: src/API/Google/AdsCampaign.php:631
+#: src/API/Google/AdsCampaign.php:623
 msgid "Invalid campaign ID"
 msgstr "ID de campaña no válido"
 
 #. translators: %s Error message
-#: src/API/Google/AdsCampaign.php:369
+#: src/API/Google/AdsCampaign.php:361
 msgid "Error deleting campaign: %s"
 msgstr "Error al retirar la campaña: %s"
 
-#: src/API/Google/AdsCampaign.php:372
+#: src/API/Google/AdsCampaign.php:364
 msgid "This campaign has already been deleted"
 msgstr "Esta campaña ya ha sido retirada"
 
 #. translators: %s Error message
-#: src/API/Google/AdsCampaign.php:333
+#: src/API/Google/AdsCampaign.php:325
 msgid "Error editing campaign: %s"
 msgstr "Error al editar la campaña: %s"
 
 #. translators: %s Error message
-#: src/API/Google/AdsCampaign.php:211
+#: src/API/Google/AdsCampaign.php:203
 msgid "Error retrieving campaign: %s"
 msgstr "Error al recuperar la campaña: %s"
 
 #. translators: %s Error message
-#: src/API/Google/AdsCampaign.php:277
+#: src/API/Google/AdsCampaign.php:269
 msgid "Error creating campaign: %s"
 msgstr "Error al crear la campaña: %s"
 
-#: src/API/Google/AdsCampaign.php:280
+#: src/API/Google/AdsCampaign.php:272
 msgid "A campaign with this name already exists"
 msgstr "Ya existe una campaña con este nombre"
 
 #. translators: %s Error message
-#: src/API/Google/AdsCampaign.php:168
+#: src/API/Google/AdsCampaign.php:160
 msgid "Error retrieving campaigns: %s"
 msgstr "Error al recuperar las campañas: %s"
 

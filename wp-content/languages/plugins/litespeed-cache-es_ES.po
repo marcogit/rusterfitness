@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - LiteSpeed Cache - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-08-15 19:05:16+0000\n"
+"PO-Revision-Date: 2024-12-30 19:18:53+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -978,19 +978,19 @@ msgstr "Por favor, lee todas las advertencias antes de activar esta opción."
 msgid "This will delete all generated unique CSS files"
 msgstr "Esto borrará todos los archivos CSS únicos generados"
 
-#: tpl/toolbox/beta_test.tpl.php:59
+#: tpl/toolbox/beta_test.tpl.php:58
 msgid "In order to avoid an upgrade error, you must be using %1$s or later before you can upgrade to %2$s versions."
 msgstr "Para evitar un error de actualización, debes usar la versión %1$s o posterior antes de poder actualizar a las versiones %2$s."
 
-#: tpl/toolbox/beta_test.tpl.php:53
+#: tpl/toolbox/beta_test.tpl.php:52
 msgid "Use latest GitHub Dev/Master commit"
 msgstr "Utiliza el último commit Dev/Master de GitHub"
 
-#: tpl/toolbox/beta_test.tpl.php:53
+#: tpl/toolbox/beta_test.tpl.php:52
 msgid "Press the %s button to use the most recent GitHub commit. Master is for release candidate & Dev is for experimental testing."
 msgstr "Presiona el botón %s para usar el commit de GitHub más reciente. Master es para la versión candidata y Dev es para pruebas experimentales."
 
-#: tpl/toolbox/beta_test.tpl.php:49
+#: tpl/toolbox/beta_test.tpl.php:48
 msgid "Downgrade not recommended. May cause fatal error due to refactored code."
 msgstr "No se recomienda bajar de versión. Puede causar un error fatal debido a código reprogramado."
 
@@ -1294,11 +1294,11 @@ msgstr "¡Purgado!"
 msgid "Resources listed here will be copied and replaced with local URLs."
 msgstr "Los recursos listados aquí se copiarán y reemplazarán con URL locales."
 
-#: tpl/toolbox/beta_test.tpl.php:36
+#: tpl/toolbox/beta_test.tpl.php:35
 msgid "Use latest GitHub Master commit"
 msgstr "Usar el último commit maestro de GitHub"
 
-#: tpl/toolbox/beta_test.tpl.php:34
+#: tpl/toolbox/beta_test.tpl.php:33
 msgid "Use latest GitHub Dev commit"
 msgstr "Usar el último commit de desarrollo de GitHub"
 
@@ -1492,7 +1492,7 @@ msgstr "Informe de LiteSpeed"
 
 #: tpl/img_optm/summary.tpl.php:182
 msgid "Image Thumbnail Group Sizes"
-msgstr "Tamaños del grupo de imágenes en miniatura"
+msgstr "Grupo de tamaños de miniaturas"
 
 #: tpl/cache/settings_inc.cache_dropquery.tpl.php:14
 msgid "Ignore certain query strings when caching. (LSWS %s required)"
@@ -1586,19 +1586,19 @@ msgstr "Especifica el tamaño máximo del archivo de registro."
 msgid "To prevent filling up the disk, this setting should be OFF when everything is working."
 msgstr "Para evitar que se llene el disco, este ajuste debe estar APAGADO cuando todo funcione."
 
-#: tpl/toolbox/beta_test.tpl.php:54
+#: tpl/toolbox/beta_test.tpl.php:53
 msgid "Press the %s button to stop beta testing and go back to the current release from the WordPress Plugin Directory."
 msgstr "Pulsa el botón %s para detener la prueba beta y volver a la versión actual del directorio de plugins de WordPress."
 
-#: tpl/toolbox/beta_test.tpl.php:38 tpl/toolbox/beta_test.tpl.php:54
+#: tpl/toolbox/beta_test.tpl.php:37 tpl/toolbox/beta_test.tpl.php:53
 msgid "Use latest WordPress release version"
 msgstr "Usar la última versión de WordPress"
 
-#: tpl/toolbox/beta_test.tpl.php:38
+#: tpl/toolbox/beta_test.tpl.php:37
 msgid "OR"
 msgstr "O"
 
-#: tpl/toolbox/beta_test.tpl.php:29
+#: tpl/toolbox/beta_test.tpl.php:28
 msgid "Use this section to switch plugin versions. To beta test a GitHub commit, enter the commit URL in the field below."
 msgstr "Utiliza esta sección para cambiar la versión del plugin. Para hacer una prueba beta de un commit de GitHub, introduce la URL del commit en el campo de abajo."
 
@@ -2094,7 +2094,7 @@ msgstr "Usar imágenes originales (no optimizadas) en tu web"
 
 #: tpl/img_optm/summary.tpl.php:292
 msgid "You can quickly switch between using original (unoptimized versions) and optimized image files. It will affect all images on your website, both regular and webp versions if available."
-msgstr "Puede cambiar rápidamente entre el uso de archivos de imágenes originales (versiones no optimizadas) y optimizadas. Afectará a todas las imágenes de tu web, tanto a las versiones regulares como a las versiones webp si están disponibles."
+msgstr "Puedes alternar rápidamente entre el uso de archivos de imágenes originales (versiones no optimizadas) y optimizadas. Afectará a todas las imágenes de tu web, tanto a las versiones normales como a las versiones webp si están disponibles."
 
 #: tpl/img_optm/summary.tpl.php:289
 msgid "Optimization Tools"
@@ -2106,7 +2106,7 @@ msgstr "Reexaminar nuevas miniaturas"
 
 #: tpl/img_optm/summary.tpl.php:241
 msgid "Congratulations, all gathered!"
-msgstr "¡Felicidades, todas reunidos!"
+msgstr "¡Felicidades, todos obtenidos!"
 
 #: tpl/img_optm/summary.tpl.php:246
 msgid "What is an image group?"
@@ -3066,7 +3066,7 @@ msgstr "Para poder usar las funciones de cache debes tener un servidor LiteSpeed
 msgid "Preserve EXIF/XMP data"
 msgstr "Conservar los datos EXIF/XMP"
 
-#: tpl/toolbox/beta_test.tpl.php:25
+#: tpl/toolbox/beta_test.tpl.php:24
 msgid "Try GitHub Version"
 msgstr "Probar versión de GitHub"
 
@@ -3103,7 +3103,7 @@ msgid "Turn On Auto Upgrade"
 msgstr "Activar la actualización automática"
 
 #: tpl/banner/new_version.php:71 tpl/banner/new_version_dev.tpl.php:24
-#: tpl/toolbox/beta_test.tpl.php:62
+#: tpl/toolbox/beta_test.tpl.php:61
 msgid "Upgrade"
 msgstr "Actualizar"
 
@@ -3437,7 +3437,7 @@ msgstr "Última ejecución"
 
 #: tpl/img_optm/settings.tpl.php:71 tpl/img_optm/summary.tpl.php:197
 msgid "You will be unable to Revert Optimization once the backups are deleted!"
-msgstr "¡No podrás Revertir la optimización una vez eliminadas las copias de seguridad!"
+msgstr "¡No podrás revertir la optimización una vez eliminadas las copias de seguridad!"
 
 #: tpl/img_optm/settings.tpl.php:70 tpl/img_optm/summary.tpl.php:196
 msgid "This is irreversible."
@@ -3473,11 +3473,11 @@ msgstr "Optimización de almacenamiento"
 
 #: tpl/img_optm/settings.tpl.php:146
 msgid "Enable replacement of WebP in %s elements that were generated outside of WordPress logic."
-msgstr "Activar reemplazo de WebP en %s elementos que fueron generados fuera de la lógica de WordPress."
+msgstr "Activar reemplazo de WebP en los elementos %s generados fuera de la lógica de WordPress."
 
 #: src/lang.cls.php:218
 msgid "WebP For Extra srcset"
-msgstr "WebP para src extra"
+msgstr "WebP en el srcset adicional"
 
 #: tpl/cdn/settings.tpl.php:128 tpl/img_optm/settings.tpl.php:132
 msgid "Use the format %1$s or %2$s (element is optional)."
@@ -3493,7 +3493,7 @@ msgstr "Especificar que atributos de elementos serán reemplazados con WebP."
 
 #: src/lang.cls.php:217
 msgid "WebP Attribute To Replace"
-msgstr "Atributo WebP a reemplazar"
+msgstr "Atributo a reemplazar para WebP"
 
 #: tpl/cdn/settings.tpl.php:165
 msgid "Only files within these directories will be pointed to the CDN."
@@ -5709,7 +5709,7 @@ msgid "Purge Front Page"
 msgstr "Purgar la página de inicio"
 
 #: tpl/page_optm/settings_localization.tpl.php:127
-#: tpl/toolbox/beta_test.tpl.php:30
+#: tpl/toolbox/beta_test.tpl.php:29
 msgid "Example"
 msgstr "Ejemplo"
 

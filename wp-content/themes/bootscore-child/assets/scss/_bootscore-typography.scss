@@ -15,30 +15,36 @@ h2,
 
 h3,
 .h3 {
+  font-size: $f-size-medbig;
   font-family: $font-family-alternative;
   line-height: $f-lh-titles;
   margin-block-end: $fit-title-space !important;
-  font-weight: 100;
+  font-weight: $f-bold;
   margin-block-end: $fit-space--small !important;
+  text-transform: uppercase;
 }
 
 h4,
 .h4 {
   font-family: $font-family-alternative;
+  font-size: $f-size-minbig;
+  line-height: $f-lh-titles;
   margin-bottom: 0 !important;
   margin-bottom: $fit-space--small-x !important;
+  text-transform: uppercase;
 }
 
 h5,
 .h5 {
   font-family: $font-family-alternative;
   font-size: $f-size-base;
+  text-transform: uppercase;
 }
 
 h6,
 .h6 {
   font-family: $font-family-alternative;
-  font-size: $f-size-medium;
+  font-size:$f-size-min;
   text-transform: uppercase;
 }
 
@@ -57,6 +63,56 @@ ul {
         padding: 0 $fit-space--small-x;
         margin: 0;
         text-decoration: underline;
+      }
+    }
+  }
+}
+
+.wp-block-button {
+  .wp-block-button__link {
+    font-family: $font-family-alternative;
+    text-transform: uppercase;
+    font-size: $f-size-minbig;
+    font-weight: $f-bold;
+    border-radius: 0;
+    padding: $fit-space--small $fit-space--small;
+    background-color: $dark;
+
+    &:hover {
+      filter: opacity(0.8);
+    }
+  }
+
+  &.is-style-outline {
+    .wp-block-button__link {
+      background-color: transparent !important;
+      color: $dark;
+
+      &:hover {
+        background-color: $dark !important;
+        color: $light;
+        filter: none;
+      }
+
+      &.has-primary-background-color {
+        color: $primary;
+        border-color: $primary;
+
+        &:hover {
+          background-color: $primary !important;
+          color: $light;
+          filter: none;
+        }
+      }
+
+      &.has-dark-background-color {
+        color: $light;
+      }
+    }
+
+    &.is-noborder {
+      .wp-block-button__link {
+        border-color: transparent !important;
       }
     }
   }
