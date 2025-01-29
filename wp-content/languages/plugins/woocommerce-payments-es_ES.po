@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-12-28 10:54:03+0000\n"
+"PO-Revision-Date: 2025-01-14 09:54:05+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -121,7 +121,7 @@ msgid "Click to copy the test number to clipboard"
 msgstr "Haz clic para copiar el número de la prueba en el portapapeles"
 
 #. translators: 1: WooPayments.
-#: includes/admin/class-wc-payments-admin.php:1218
+#: includes/admin/class-wc-payments-admin.php:1217
 msgid "Please <b>complete your %1$s setup</b> to continue using it."
 msgstr "<b>Completa tu configuración</b> de %1$s para seguir utilizándolo."
 
@@ -161,11 +161,11 @@ msgstr "Hay otra sesión de configuración de cuenta en curso. Finalízala o %1$
 msgid "Please <b>complete your %1$s setup</b> to process transactions."
 msgstr "<b>Completa la%1$s configuración</b> para procesar las transacciones."
 
-#: includes/class-wc-payments.php:2108
+#: includes/class-wc-payments.php:2107
 msgid "is required to create an WooPay account."
 msgstr "para crear una cuenta de WooPay."
 
-#: includes/class-wc-payments.php:2108
+#: includes/class-wc-payments.php:2107
 msgid "Mobile Number"
 msgstr "Se requiere un número de teléfono móvil"
 
@@ -328,7 +328,7 @@ msgid "Your account is in sandbox mode. If you are experiencing problems complet
 msgstr "Tu cuenta está en modo de entorno de pruebas. Si tienes problemas para completar la configuración de la cuenta o quieres probar a asociar otro país/correo electrónico a tu cuenta, puedes restablecer la cuenta y empezar desde el principio."
 
 #: client/components/deposits-overview/deposit-notices.tsx:105
-#: client/deposits/index.tsx:77
+#: client/deposits/index.tsx:76
 msgid "Payouts are currently paused because a recent payout failed. Please {{updateLink}}update your bank account details{{/updateLink}}."
 msgstr "Los pagos están actualmente en pausa porque se produjo un error con un pago reciente. {{updateLink}}Actualiza los datos de tu cuenta bancaria{{/updateLink}}."
 
@@ -469,7 +469,7 @@ msgstr "Este filtro está desactivado porque actualmente vendes a todos los paí
 msgid "Order amount too small"
 msgstr "Pedido demasiado pequeño"
 
-#: includes/express-checkout/class-wc-payments-express-checkout-ajax-handler.php:367
+#: includes/express-checkout/class-wc-payments-express-checkout-ajax-handler.php:376
 msgid "Invalid product id"
 msgstr "ID de producto no válido"
 
@@ -1451,12 +1451,12 @@ msgstr "No se ha indicado ningún método de pago de %s"
 
 #. translators: %1: the successfully charged amount, %2: WooPayments, %3:
 #. reason, %4: refund id
-#: includes/class-wc-payments-order-service.php:1777
+#: includes/class-wc-payments-order-service.php:1775
 msgid "A refund of %1$s was successfully processed using %2$s. Reason: %3$s. (<code>%4$s</code>)"
 msgstr "Se ha procesado correctamente un reembolso de %1$s mediante %2$s. Motivo: %3$s. (<code>%4$s</code>)"
 
 #. translators: %1: the refund amount, %2: WooPayments, %3: ID of the refund
-#: includes/class-wc-payments-order-service.php:1764
+#: includes/class-wc-payments-order-service.php:1762
 msgid "A refund of %1$s was successfully processed using %2$s (<code>%3$s</code>)."
 msgstr "Se ha procesado correctamente un reembolso de %1$s mediante %2$s (<code>%3$s</code>)."
 
@@ -1505,7 +1505,7 @@ msgid "If %s should be enabled."
 msgstr "En el caso de que se deba activar %s."
 
 #. translators: %s: WooPayments
-#: includes/admin/class-wc-payments-admin.php:1271
+#: includes/admin/class-wc-payments-admin.php:1270
 msgid "This represents the fee %s collects for the transaction."
 msgstr "Representa la tarifa que %s cobra por la transacción."
 
@@ -1549,7 +1549,7 @@ msgstr "Diners Club"
 msgid "American Express"
 msgstr "American Express"
 
-#: client/transactions/filters/config.ts:184
+#: client/transactions/filters/config.ts:209
 msgid "<title>Type</title> <rule /> <filter />"
 msgstr "<title>Tipo</title> <rule /> <filter />"
 
@@ -1564,19 +1564,19 @@ msgstr "<title>Fecha</title> <rule /> <filter />"
 
 #. translators: %1$s: WooCommerce , %2$s: WooPayments, %3$s: The current
 #. WooCommerce version used by the store
-#: includes/class-wc-payments.php:2025
+#: includes/class-wc-payments.php:2024
 msgid "The %1$s version you have installed is not compatible with %2$s for a Czech Republic business. Please update %1$s to version 7.8 or above (you are using %3$s). You can do that via the <a1>the plugins page.</a1>"
 msgstr "La versión de %1$s que has instalado no es compatible con %2$s para los negocios de República Checa. Actualiza a la versión 7.8 de %1$s o a una posterior (estás usando %3$s). Puedes realizar esta acción a través de la <a1>página de plugins</a1>."
 
 #. translators: %1$s: WooCommerce , %2$s: WooPayments, %3$s: The current
 #. WooCommerce version used by the store
-#: includes/class-wc-payments.php:2021
+#: includes/class-wc-payments.php:2020
 msgid "The %1$s version you have installed is not compatible with %2$s for a Swedish business. Please update %1$s to version 7.8 or above (you are using %3$s). You can do that via the <a1>the plugins page.</a1>"
 msgstr "La versión de %1$s que has instalado no es compatible con %2$s para los negocios de Suecia. Actualiza a la versión 7.8 de %1$s o a una posterior (estás usando %3$s). Puedes realizar esta acción a través de la <a1>página de plugins</a1>."
 
 #. translators: %1$s: WooCommerce , %2$s: WooPayments, %3$s: The current
 #. WooCommerce version used by the store
-#: includes/class-wc-payments.php:2017
+#: includes/class-wc-payments.php:2016
 msgid "The %1$s version you have installed is not compatible with %2$s for a Hungarian business. Please update %1$s to version 7.8 or above (you are using %3$s). You can do that via the <a1>the plugins page.</a1>"
 msgstr "La versión de %1$s que has instalado no es compatible con %2$s para los negocios de Hungría. Actualiza a la versión 7.8 de %1$s o a una posterior (estás usando %3$s). Puedes realizar esta acción a través de la <a1>página de plugins</a1>."
 
@@ -1868,7 +1868,7 @@ msgstr "Marca de verificación verde"
 msgid "Fraud &amp; Risk"
 msgstr "Fraude y riesgos"
 
-#: includes/class-wc-payments-order-service.php:2027
+#: includes/class-wc-payments-order-service.php:2029
 msgid "The requested order was not found."
 msgstr "No se ha encontrado el pedido solicitado."
 
@@ -1882,7 +1882,7 @@ msgstr "&#x1F6AB; Uno o más filtros de riesgo han <strong>bloqueado</strong> un
 msgid "&#x26D4; A payment of %1$s was <strong>held for review</strong> by one or more risk filters.<br><br><a>View more details</a>."
 msgstr "⛔ Uno o más filtros de riesgo han <strong>retenido para su revisión</strong> un pago de %1$s.<br><br><a>Ver más detalles</a>."
 
-#: includes/admin/class-wc-payments-admin.php:1276
+#: includes/admin/class-wc-payments-admin.php:1275
 msgid "Transaction Fee:"
 msgstr "Cargo por transacción:"
 
@@ -2409,19 +2409,19 @@ msgstr "Fecha del plazo semanal del calendario de depósitos cuando el intervalo
 msgid "An interval for deposit scheduling."
 msgstr "Un intervalo para el calendario de depósitos."
 
-#: includes/express-checkout/class-wc-payments-express-checkout-ajax-handler.php:144
+#: includes/express-checkout/class-wc-payments-express-checkout-ajax-handler.php:153
 msgid "Unable to determine payment success."
 msgstr "No se ha podido determinar si se ha realizado el pago correctamente."
 
-#: includes/express-checkout/class-wc-payments-express-checkout-ajax-handler.php:132
+#: includes/express-checkout/class-wc-payments-express-checkout-ajax-handler.php:141
 msgid "This order does not require payment!"
 msgstr "Este pedido no requiere ningún pago."
 
-#: includes/express-checkout/class-wc-payments-express-checkout-ajax-handler.php:128
+#: includes/express-checkout/class-wc-payments-express-checkout-ajax-handler.php:137
 msgid "Invalid order!"
 msgstr "Pedido no válido."
 
-#: includes/express-checkout/class-wc-payments-express-checkout-ajax-handler.php:116
+#: includes/express-checkout/class-wc-payments-express-checkout-ajax-handler.php:125
 msgid "Invalid request"
 msgstr "Solicitud no válida."
 
@@ -2438,7 +2438,7 @@ msgstr "En línea"
 msgid "In-Person"
 msgstr "En persona"
 
-#: client/transactions/filters/config.ts:251
+#: client/transactions/filters/config.ts:276
 #: client/transactions/list/index.tsx:121
 msgid "Channel"
 msgstr "Canal"
@@ -2488,12 +2488,12 @@ msgstr "%1$sElige una suscripción%2$s%3$s%4$s añade dos nuevos tipos de produc
 msgid "Store logo to display to WooPay customers."
 msgstr "Logotipo de la tienda que se muestra a los clientes de WooPay."
 
-#: includes/admin/class-wc-payments-admin.php:1244
+#: includes/admin/class-wc-payments-admin.php:1243
 #: includes/class-wc-payments-order-success-page.php:143
 msgid "Card ending in"
 msgstr "Tarjeta que termina en"
 
-#: includes/admin/class-wc-payments-admin.php:1240
+#: includes/admin/class-wc-payments-admin.php:1239
 msgid "Paid with"
 msgstr "Pago con"
 
@@ -2599,7 +2599,7 @@ msgstr "Se ha producido un error al acceder al documento %1$s. %2$s"
 msgid "Documents"
 msgstr "Documentos"
 
-#: includes/class-wc-payments-order-service.php:1955
+#: includes/class-wc-payments-order-service.php:1957
 msgid "Intent id was not included for payment complete status change."
 msgstr "El ID del intento no se ha incluido para el cambio de estado completado del pago."
 
@@ -2773,11 +2773,11 @@ msgid "The customer's bank account has been closed."
 msgstr "La cuenta bancaria del cliente se ha cerrado."
 
 #: client/disputes/index.tsx:321 client/transactions/blocked/index.tsx:111
-#: client/transactions/list/index.tsx:463
+#: client/transactions/list/index.tsx:467
 msgid "There was a problem generating your export."
 msgstr "Se ha producido un problema al generar la exportación."
 
-#: client/disputes/index.tsx:313 client/transactions/list/index.tsx:460
+#: client/disputes/index.tsx:313 client/transactions/list/index.tsx:464
 msgid "Your export will be emailed to %s"
 msgstr "El elemento exportado se enviará por correo electrónico a %s"
 
@@ -3229,9 +3229,9 @@ msgstr "Descartar"
 
 #. translators: %1 User's country, %2 Selected currency name, %3 Default store
 #. currency name, %4 Link to switch currency
-#: includes/multi-currency/MultiCurrency.php:969
+#: includes/multi-currency/MultiCurrency.php:972
 msgid "We noticed you're visiting from %1$s. We've updated our prices to %2$s for your shopping convenience. <a href=\"%4$s\">Use %3$s instead.</a>"
-msgstr ""
+msgstr "Hemos visto que nos visitas desde %1$s. Hemos actualizado nuestros precios en %2$s para que comprar resulte más sencillo. <a href=\"%4$s\">Utiliza %3$s en su lugar.</a>"
 
 #: includes/compat/subscriptions/trait-wc-payment-gateway-wcpay-subscriptions.php:290
 msgid ""
@@ -3540,7 +3540,7 @@ msgstr "Apple Pay"
 msgid "Issue an authorization on checkout, and capture later"
 msgstr "Emite una autorización durante el pago y haz la captura más tarde"
 
-#: client/deposits/list/index.tsx:165 client/transactions/list/index.tsx:522
+#: client/deposits/list/index.tsx:165 client/transactions/list/index.tsx:526
 #: client/transactions/uncaptured/index.tsx:162
 msgid "total"
 msgstr "Total"
@@ -3702,7 +3702,7 @@ msgstr "Mostrar"
 msgid "All currencies"
 msgstr "Todas las divisas"
 
-#: client/transactions/filters/config.ts:183
+#: client/transactions/filters/config.ts:208
 msgid "{{title}}Type{{/title}} {{rule /}} {{filter /}}"
 msgstr "{{title}}Tipo{{/title}} {{rule /}} {{filter /}}"
 
@@ -3743,6 +3743,7 @@ msgid "ID"
 msgstr "ID "
 
 #: client/payment-details/summary/index.tsx:95
+#: client/transactions/filters/config.ts:178
 msgid "Payment method"
 msgstr "Método de pago"
 
@@ -3822,7 +3823,7 @@ msgid "Amount"
 msgstr "Cantidad"
 
 #: client/documents/filters/config.ts:76 client/documents/list/index.tsx:36
-#: client/transactions/filters/config.ts:178
+#: client/transactions/filters/config.ts:203
 #: client/transactions/list/index.tsx:114
 msgid "Type"
 msgstr "Tipo"
@@ -4063,7 +4064,7 @@ msgstr "La autorización del pago ha <strong>caducado</strong> (<a>%1$s</a>)."
 msgid "Discount"
 msgstr "Descuento"
 
-#: includes/express-checkout/class-wc-payments-express-checkout-ajax-handler.php:71
+#: includes/express-checkout/class-wc-payments-express-checkout-ajax-handler.php:80
 msgid "Empty cart"
 msgstr "Carrito vacío"
 
@@ -4073,12 +4074,12 @@ msgid "The express checkout is not supported in %s because some required fields 
 msgstr ""
 
 #. translators: 1: product name 2: quantity in stock
-#: includes/express-checkout/class-wc-payments-express-checkout-ajax-handler.php:284
+#: includes/express-checkout/class-wc-payments-express-checkout-ajax-handler.php:293
 msgid "You cannot add that amount of \"%1$s\"; to the cart because there is not enough stock (%2$s remaining)."
 msgstr "No puedes añadir esa cantidad de %1$s\"; al carrito porque no hay suficientes existencias (restantes: %2$s)."
 
 #. translators: product ID
-#: includes/express-checkout/class-wc-payments-express-checkout-ajax-handler.php:263
+#: includes/express-checkout/class-wc-payments-express-checkout-ajax-handler.php:272
 msgid "Product with the ID (%d) cannot be found."
 msgstr "No se encuentra el producto con el ID (%d)."
 
@@ -4091,18 +4092,18 @@ msgstr "No se puede encontrar el método de envío para la dirección."
 msgid "OR"
 msgstr "O"
 
-#: includes/express-checkout/class-wc-payments-express-checkout-ajax-handler.php:320
+#: includes/express-checkout/class-wc-payments-express-checkout-ajax-handler.php:329
 #: includes/express-checkout/class-wc-payments-express-checkout-button-helper.php:731
 msgid "Pending"
 msgstr "Pendiente"
 
-#: includes/express-checkout/class-wc-payments-express-checkout-ajax-handler.php:313
+#: includes/express-checkout/class-wc-payments-express-checkout-ajax-handler.php:322
 #: includes/express-checkout/class-wc-payments-express-checkout-button-helper.php:121
 #: includes/express-checkout/class-wc-payments-express-checkout-button-helper.php:724
 msgid "Shipping"
 msgstr "Envío"
 
-#: includes/express-checkout/class-wc-payments-express-checkout-ajax-handler.php:305
+#: includes/express-checkout/class-wc-payments-express-checkout-ajax-handler.php:314
 #: includes/express-checkout/class-wc-payments-express-checkout-button-handler.php:347
 #: includes/express-checkout/class-wc-payments-express-checkout-button-helper.php:112
 #: includes/express-checkout/class-wc-payments-express-checkout-button-helper.php:716

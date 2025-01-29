@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Google for WooCommerce - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-12-23 16:04:49+0000\n"
+"PO-Revision-Date: 2025-01-15 19:04:19+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -11,24 +11,28 @@ msgstr ""
 "Language: es\n"
 "Project-Id-Version: Plugins - Google for WooCommerce - Stable (latest release)\n"
 
-#: src/API/Site/Controllers/MerchantCenter/ShippingTimeController.php:324
+#: src/Menu/Shipping.php:27 js/build/commons.js:60 js/build/index.js:25
+msgid "Shipping"
+msgstr "Envío"
+
+#: src/API/Site/Controllers/MerchantCenter/ShippingTimeController.php:315
 msgid "The minimum shipping time cannot be greater than the maximum shipping time."
 msgstr "El tiemo mínimo de envío no puede ser mayor que el tiempo máximo de envío."
 
-#: src/API/Site/Controllers/MerchantCenter/ShippingTimeController.php:320
+#: src/API/Site/Controllers/MerchantCenter/ShippingTimeController.php:311
 msgid "Shipping times cannot be negative."
 msgstr "Los tiempos de envío no pueden ser negativos."
 
 #. translators: 1: Parameter, 2: Type name.
-#: src/API/Site/Controllers/MerchantCenter/ShippingTimeController.php:314
+#: src/API/Site/Controllers/MerchantCenter/ShippingTimeController.php:305
 msgid "%1$s is not of type %2$s."
 msgstr "%1$s no es del tipo %2$s."
 
-#: src/API/Site/Controllers/MerchantCenter/ShippingTimeController.php:278
+#: src/API/Site/Controllers/MerchantCenter/ShippingTimeController.php:269
 msgid "The maximum shipping time in days."
 msgstr "El tiempo máximo de envío en días."
 
-#: src/API/Site/Controllers/MerchantCenter/ShippingTimeController.php:272
+#: src/API/Site/Controllers/MerchantCenter/ShippingTimeController.php:263
 msgid "The minimum shipping time in days."
 msgstr "El tiempo mínimo de envío en días."
 
@@ -52,11 +56,11 @@ msgstr "No se ha migrado ningún GTIN."
 msgid "Reach more shoppers with Google Ads"
 msgstr "Llega a más compradores con los anuncios de Google"
 
-#: src/API/Site/Controllers/GTINMigrationController.php:88
+#: src/API/Site/Controllers/GTINMigrationController.php:89
 msgid "GTIN Migration successfully started."
 msgstr "Migración GTIN iniciada correctamente."
 
-#: src/API/Site/Controllers/GTINMigrationController.php:78
+#: src/API/Site/Controllers/GTINMigrationController.php:79
 msgid "GTIN Migration cannot be scheduled."
 msgstr "No se puede programar la Migración GTIN."
 
@@ -95,15 +99,15 @@ msgstr "Ir a Google for WooCommerce"
 msgid "Re-connect your store to Google for WooCommerce"
 msgstr "Reconecta tu tienda a Google for WooCommerce"
 
-#: src/MerchantCenter/AccountService.php:582
+#: src/MerchantCenter/AccountService.php:579
 msgid "Nonces mismatch, skip updating auth status."
 msgstr "Los nonces no coinciden, omite la actualización del estado de autenticación."
 
-#: src/MerchantCenter/AccountService.php:575
+#: src/MerchantCenter/AccountService.php:572
 msgid "Nonce is not provided, skip updating auth status."
 msgstr "No se proporciona el nonce, omite la actualización del estado de autenticación."
 
-#: src/MerchantCenter/AccountService.php:569
+#: src/MerchantCenter/AccountService.php:566
 msgid "No stored nonce found in the database, skip updating auth status."
 msgstr "No se ha encontrado ningún nonce almacenado en la base de datos, omite la actualización del estado de autenticación."
 
@@ -169,11 +173,11 @@ msgstr "El estado del comerciante que concede acceso a la aplicación WPCOM de G
 msgid "Indicates the next page name mapped to the redirect URL when redirected back from Google WPCOM App authorization."
 msgstr "Indica el nombre de la página siguiente asignada a la URL de redirección cuando se redirige de vuelta desde la autorización de la aplicación Google WPCOM."
 
-#: src/API/Google/Middleware.php:608
+#: src/API/Google/Middleware.php:596
 msgid "Error authenticating Google Partner APP."
 msgstr "Error al identificar Google Partner APP."
 
-#: src/API/Google/Middleware.php:598
+#: src/API/Google/Middleware.php:586
 msgid "Invalid response authenticating partner app."
 msgstr "Respuesta no válida identificando la aplicación asociada."
 
@@ -196,7 +200,7 @@ msgstr "[%1$s] Acción de compra de Google for WooCommerce"
 msgid "Google for WooCommerce"
 msgstr "Google for WooCommerce"
 
-#: src/Ads/AccountService.php:254
+#: src/Ads/AccountService.php:249
 msgid "Account must be accepted before completing setup."
 msgstr "La cuenta debe ser aceptada antes de completar la configuración."
 
@@ -204,7 +208,7 @@ msgstr "La cuenta debe ser aceptada antes de completar la configuración."
 msgid "You got your first conversion on Google Ads! 🎉"
 msgstr "¡Ya tienes tu primera conversión en Google Ads! 🎉"
 
-#: src/MerchantCenter/MerchantStatuses.php:148
+#: src/MerchantCenter/MerchantStatuses.php:147
 msgid "The scheduled job has been paused due to a high failure rate."
 msgstr "El trabajo programado se ha pausado debido a una alta tasa de fallos."
 
@@ -254,7 +258,7 @@ msgid "The recommended daily budget for a country."
 msgstr "El presupuesto diario recomendado para un país."
 
 #. translators: 1) HTML anchor open tag 2) HTML anchor closing tag
-#: src/Admin/Admin.php:282
+#: src/Admin/Admin.php:279
 msgid "By using this extension, you may be storing personal data or sharing data with an external service. %1$sLearn more about what data is collected by Google and what you may want to include in your privacy policy%2$s."
 msgstr "Al utilizar esta extensión, es posible que almacenes datos personales o compartas datos con un servicio externo. %1$sAprende más sobre cómo recopila Google los datos y lo que quieres incluir en tu política de privacidad%2$s."
 
@@ -640,7 +644,7 @@ msgstr "Grande"
 msgid "Tall"
 msgstr "Alto"
 
-#: src/API/Site/Controllers/Ads/ReportsController.php:161
+#: src/API/Site/Controllers/Ads/ReportsController.php:165
 msgid "Whether the campaign has been converted"
 msgstr "Si la campaña se ha convertido"
 
@@ -937,7 +941,7 @@ msgid "Method used to verify the phone number."
 msgstr "Método usado para verificar el número de teléfono."
 
 #. translators: 1: current date in the format Y-m-d
-#: src/API/Google/Middleware.php:521
+#: src/API/Google/Middleware.php:509
 msgid "Account %1$s"
 msgstr "Cuenta %1$s"
 
@@ -1342,7 +1346,7 @@ msgid "Enter your value"
 msgstr "Introduce tu valor"
 
 #. translators: 1: is a numeric account ID
-#: src/MerchantCenter/AccountService.php:432
+#: src/MerchantCenter/AccountService.php:429
 msgid "Merchant Center account already connected: %d"
 msgstr "Cuenta de Merchant Center ya conectada: %d"
 
@@ -1368,8 +1372,7 @@ msgid "Reports"
 msgstr "Informes"
 
 #: views/meta-box/channel_visibility.php:95
-#: views/meta-box/coupon_channel_visibility.php:163 js/build/commons.js:35
-#: js/build/onboarding.js:1
+#: views/meta-box/coupon_channel_visibility.php:163 js/build/onboarding.js:1
 msgid "Complete setup"
 msgstr "Configuración completa"
 
@@ -1418,22 +1421,22 @@ msgstr "No sincronizar y mostrar"
 msgid "Sync and show"
 msgstr "Sincronizar y mostrar"
 
-#: src/Admin/Admin.php:221
+#: src/Admin/Admin.php:218
 msgid "Documentation"
 msgstr "Documentación"
 
-#: src/Admin/Admin.php:214 js/build/blocks.js:1
+#: src/Admin/Admin.php:211 js/build/blocks.js:1
 msgid "Get Started"
 msgstr "Primeros pasos"
 
-#: src/Admin/Admin.php:208 src/Menu/Settings.php:25 js/build/commons.js:60
+#: src/Admin/Admin.php:205 src/Menu/Settings.php:25 js/build/commons.js:60
 #: js/build/index.js:25
 msgid "Settings"
 msgstr "Ajustes"
 
-#. translators: %s: the job name
+#. translators: %s: the job classname
 #: src/Jobs/JobException.php:72
-msgid "The job named \"%s\" does not exist."
+msgid "The job \"%s\" does not exist."
 msgstr "No existe la tarea llamada «%s»."
 
 #. translators: %s: the job name
@@ -1495,48 +1498,48 @@ msgstr "La campaña no está disponible."
 msgid "Campaign %s"
 msgstr "Campaña %s"
 
-#: src/API/Site/Controllers/Ads/ReportsController.php:222
+#: src/API/Site/Controllers/Ads/ReportsController.php:226
 msgid "Conversions."
 msgstr "Conversiones."
 
-#: src/API/Site/Controllers/Ads/ReportsController.php:217
+#: src/API/Site/Controllers/Ads/ReportsController.php:221
 msgid "Spend amount."
 msgstr "Importe gastado."
 
-#: src/API/Site/Controllers/Ads/ReportsController.php:212
+#: src/API/Site/Controllers/Ads/ReportsController.php:216
 msgid "Sales amount."
 msgstr "Importe de las ventas."
 
 #: src/API/Site/Controllers/Ads/CampaignController.php:359
-#: src/API/Site/Controllers/Ads/ReportsController.php:156
+#: src/API/Site/Controllers/Ads/ReportsController.php:160
 msgid "Campaign status."
 msgstr "Estado de la campaña."
 
-#: src/API/Site/Controllers/Ads/ReportsController.php:150
+#: src/API/Site/Controllers/Ads/ReportsController.php:154
 msgid "Campaign name."
 msgstr "Nombre de la campaña."
 
 #: src/API/Site/Controllers/Ads/CampaignController.php:345
-#: src/API/Site/Controllers/Ads/ReportsController.php:145
+#: src/API/Site/Controllers/Ads/ReportsController.php:149
 msgid "ID number."
 msgstr "Número de ID."
 
-#: src/API/Site/Controllers/Ads/ReportsController.php:131
-#: src/API/Site/Controllers/MerchantCenter/ReportsController.php:135
+#: src/API/Site/Controllers/Ads/ReportsController.php:135
+#: src/API/Site/Controllers/MerchantCenter/ReportsController.php:139
 msgid "Product name."
 msgstr "Nombre del producto."
 
-#: src/Ads/AccountService.php:332
+#: src/Ads/AccountService.php:327
 msgid "Billing setup must be completed."
 msgstr "Se debe completar la configuración de la facturación."
 
 #. translators: 1: is a string representing an unknown step name
-#: src/Ads/AccountService.php:190
+#: src/Ads/AccountService.php:185
 msgid "Unknown ads account creation step %1$s"
 msgstr "Paso de creación de cuenta de anuncios desconocido %1$s"
 
 #. translators: 1: is a numeric account ID
-#: src/Ads/AccountService.php:113
+#: src/Ads/AccountService.php:108
 msgid "Ads account %1$d already connected."
 msgstr "La cuenta %1$d de Google Ads ya está conectada"
 
@@ -1590,21 +1593,21 @@ msgstr "Tipo de problema."
 msgid "The issues related to the Merchant Center account."
 msgstr "Los problemas relacionados con la cuenta de Merchant Center."
 
-#: src/API/Site/Controllers/MerchantCenter/ShippingTimeController.php:355
+#: src/API/Site/Controllers/MerchantCenter/ShippingTimeController.php:346
 msgid "Country in which the shipping time applies."
 msgstr "País en el que se aplica el tiempo de envío."
 
 #. translators: %s is the country code in ISO 3166-1 alpha-2 format.
-#: src/API/Site/Controllers/MerchantCenter/ShippingTimeController.php:213
+#: src/API/Site/Controllers/MerchantCenter/ShippingTimeController.php:204
 msgid "Successfully deleted the time for country: \"%s\"."
 msgstr "Se ha borrado correctamente la hora del país: «%s»."
 
 #. translators: %s is the country code in ISO 3166-1 alpha-2 format.
-#: src/API/Site/Controllers/MerchantCenter/ShippingTimeController.php:179
+#: src/API/Site/Controllers/MerchantCenter/ShippingTimeController.php:170
 msgid "Successfully added time for country: \"%s\"."
 msgstr "Añadida correctamente la hora para el país:  «%s»."
 
-#: src/API/Site/Controllers/MerchantCenter/ShippingTimeController.php:128
+#: src/API/Site/Controllers/MerchantCenter/ShippingTimeController.php:119
 msgid "No time available."
 msgstr "No queda tiempo disponible."
 
@@ -1622,7 +1625,7 @@ msgid "The currency to use for the shipping rate."
 msgstr "Moneda a usar para la tarifa de envío."
 
 #: src/API/Site/Controllers/Ads/BudgetRecommendationController.php:165
-#: src/API/Site/Controllers/MerchantCenter/ShippingTimeController.php:264
+#: src/API/Site/Controllers/MerchantCenter/ShippingTimeController.php:255
 #: src/API/Site/Controllers/ShippingRateSchemaTrait.php:34
 msgid "Country code in ISO 3166-1 alpha-2 format."
 msgstr "Código del país en formato ISO 3166-1 alpha-2."
@@ -1669,34 +1672,34 @@ msgstr "Título del producto."
 msgid "The store's products."
 msgstr "Los productos de la tienda."
 
-#: src/API/Site/Controllers/Ads/ReportsController.php:207
-#: src/API/Site/Controllers/MerchantCenter/ReportsController.php:181
+#: src/API/Site/Controllers/Ads/ReportsController.php:211
+#: src/API/Site/Controllers/MerchantCenter/ReportsController.php:185
 msgid "Impressions."
 msgstr "Impresiones."
 
-#: src/API/Site/Controllers/Ads/ReportsController.php:202
-#: src/API/Site/Controllers/MerchantCenter/ReportsController.php:176
+#: src/API/Site/Controllers/Ads/ReportsController.php:206
+#: src/API/Site/Controllers/MerchantCenter/ReportsController.php:180
 msgid "Clicks."
 msgstr "Clics."
 
-#: src/API/Site/Controllers/Ads/ReportsController.php:185
-#: src/API/Site/Controllers/MerchantCenter/ReportsController.php:159
+#: src/API/Site/Controllers/Ads/ReportsController.php:189
+#: src/API/Site/Controllers/MerchantCenter/ReportsController.php:163
 msgid "Token to retrieve the next page of results."
 msgstr "Token para recuperar la siguiente página de resultados."
 
-#: src/API/Site/Controllers/Ads/ReportsController.php:175
-#: src/API/Site/Controllers/MerchantCenter/ReportsController.php:149
+#: src/API/Site/Controllers/Ads/ReportsController.php:179
+#: src/API/Site/Controllers/MerchantCenter/ReportsController.php:153
 msgid "ID of this report segment."
 msgstr "ID de este segmento del informe."
 
-#: src/API/Site/Controllers/Ads/ReportsController.php:126
+#: src/API/Site/Controllers/Ads/ReportsController.php:130
 #: src/API/Site/Controllers/MerchantCenter/ProductFeedController.php:92
-#: src/API/Site/Controllers/MerchantCenter/ReportsController.php:130
+#: src/API/Site/Controllers/MerchantCenter/ReportsController.php:134
 msgid "Product ID."
 msgstr "ID del producto."
 
-#: src/API/Site/Controllers/Ads/ReportsController.php:98
-#: src/API/Site/Controllers/MerchantCenter/ReportsController.php:97
+#: src/API/Site/Controllers/Ads/ReportsController.php:102
+#: src/API/Site/Controllers/MerchantCenter/ReportsController.php:101
 msgid "Time interval to use for segments in the returned data."
 msgstr "Intervalo de tiempo para utilizar para los segmentos en los datos devueltos."
 
@@ -1769,16 +1772,16 @@ msgid "Merchant Center Settings successfully updated."
 msgstr "Los ajustes del Merchant Center se han actualizado correctamente."
 
 #. translators: 1: is a website URL (without the protocol)
-#: src/MerchantCenter/AccountService.php:481
+#: src/MerchantCenter/AccountService.php:478
 msgid "This Merchant Center account already has a verified and claimed URL, %1$s"
 msgstr "Esta cuenta de Merchant Center ya tiene una URL verificada y reclamada, %1$s"
 
-#: src/MerchantCenter/AccountService.php:400
+#: src/MerchantCenter/AccountService.php:397
 msgid "Unable to claim website URL with this Merchant Center Account."
 msgstr "No ha sido posible reclamar la URL del sitio web con esta cuenta de Merchant Center."
 
 #. translators: 1: is a string representing an unknown step name
-#: src/MerchantCenter/AccountService.php:368
+#: src/MerchantCenter/AccountService.php:365
 msgid "Unknown merchant account creation step %1$s"
 msgstr "Paso de creación de cuenta comercial desconocido %1$s"
 
@@ -1794,11 +1797,11 @@ msgstr "ID de cuenta de Merchant Center"
 msgid "Merchant Center account successfully disconnected."
 msgstr "La cuenta de Merchant Center desconectada correctamente."
 
-#: src/MerchantCenter/AccountService.php:189
+#: src/MerchantCenter/AccountService.php:186
 msgid "Attempting invalid URL switch."
 msgstr "Intento de cambio de URL no válido."
 
-#: src/MerchantCenter/AccountService.php:212
+#: src/MerchantCenter/AccountService.php:209
 msgid "Attempting invalid claim overwrite."
 msgstr "Intento de sobreescritura de reclamación no válida."
 
@@ -1808,40 +1811,40 @@ msgstr "Intento de sobreescritura de reclamación no válida."
 msgid "Array of country codes in ISO 3166-1 alpha-2 format."
 msgstr "Array de códigos de país en formato ISO 3166-1 alfa-2."
 
-#: src/API/Site/Controllers/BaseReportsController.php:98
+#: src/API/Site/Controllers/BaseReportsController.php:88
 msgid "Token to retrieve the next page."
 msgstr "Token para recuperar la página siguiente."
 
 #: src/API/Site/Controllers/Ads/CampaignController.php:326
-#: src/API/Site/Controllers/BaseReportsController.php:89
+#: src/API/Site/Controllers/BaseReportsController.php:79
 #: src/API/Site/Controllers/MerchantCenter/IssuesController.php:208
 #: src/API/Site/Controllers/MerchantCenter/ProductFeedController.php:169
 msgid "Maximum number of rows to be returned in result data."
 msgstr "Número máximo de filas que se devolverán en los datos de resultados."
 
-#: src/API/Site/Controllers/BaseReportsController.php:84
+#: src/API/Site/Controllers/BaseReportsController.php:74
 #: src/API/Site/Controllers/MerchantCenter/ProductFeedController.php:191
 msgid "Sort collection by attribute."
 msgstr "Ordenar la colección por atributo."
 
-#: src/API/Site/Controllers/BaseReportsController.php:77
+#: src/API/Site/Controllers/BaseReportsController.php:67
 #: src/API/Site/Controllers/MerchantCenter/ProductFeedController.php:198
 msgid "Order sort attribute ascending or descending."
 msgstr "Orden de clasificación de atributos ascendente o descendente."
 
-#: src/API/Site/Controllers/BaseReportsController.php:68
+#: src/API/Site/Controllers/BaseReportsController.php:58
 msgid "Limit totals to a set of fields."
 msgstr "Limita los totales a un conjunto de campos."
 
-#: src/API/Site/Controllers/BaseReportsController.php:59
+#: src/API/Site/Controllers/BaseReportsController.php:49
 msgid "Limit result to items with specified ids."
 msgstr "Limita el resultado a artículos con IDs específicos."
 
-#: src/API/Site/Controllers/BaseReportsController.php:52
+#: src/API/Site/Controllers/BaseReportsController.php:42
 msgid "Limit response to data before a given ISO8601 compliant date."
 msgstr "Limita la respuesta a los datos anteriores a una fecha determinada que cumpla con ISO8601."
 
-#: src/API/Site/Controllers/BaseReportsController.php:45
+#: src/API/Site/Controllers/BaseReportsController.php:35
 msgid "Limit response to data after a given ISO8601 compliant date."
 msgstr "Limita la respuesta a los datos posteriores a una fecha determinada que cumpla con ISO8601."
 
@@ -1962,15 +1965,15 @@ msgstr "Web ya reclamada, utiliza la sobrescritura para completar el proceso."
 msgid "Unable to claim website."
 msgstr "No se puede reclamar la web."
 
-#: src/API/Google/Middleware.php:402
+#: src/API/Google/Middleware.php:390
 msgid "Error linking account"
 msgstr "Error al enlazar cuenta"
 
-#: src/API/Google/Middleware.php:396
+#: src/API/Google/Middleware.php:384
 msgid "Invalid response when linking account"
 msgstr "Respuesta no válida al enlazar la cuenta"
 
-#: src/API/Google/Middleware.php:300
+#: src/API/Google/Middleware.php:288
 msgid "Store country is not supported"
 msgstr "El país de la tienda no es compatible"
 
@@ -1979,40 +1982,40 @@ msgstr "El país de la tienda no es compatible"
 msgid "Error retrieving accounts: %s"
 msgstr "Error al recuperar las cuentas: %s"
 
-#: src/API/Google/Middleware.php:281
+#: src/API/Google/Middleware.php:269
 msgid "Error claiming website"
 msgstr "Error al reclamar la web"
 
-#: src/API/Google/Middleware.php:274
+#: src/API/Google/Middleware.php:262
 msgid "Invalid response when claiming website"
 msgstr "Respuesta no válida al reclamar la web"
 
-#: src/API/Google/Middleware.php:235
+#: src/API/Google/Middleware.php:223
 msgid "Error linking merchant to MCA"
 msgstr "Error al enlazar el comercio con MCA"
 
-#: src/API/Google/Middleware.php:229
+#: src/API/Google/Middleware.php:217
 msgid "Invalid response when linking merchant to MCA"
 msgstr "Respuesta no válida al enlazar el comercio con MCA"
 
-#: src/API/Google/Middleware.php:168 src/API/Google/Middleware.php:352
+#: src/API/Google/Middleware.php:156 src/API/Google/Middleware.php:340
 msgid "Error creating account"
 msgstr "Error al crear la cuenta."
 
-#: src/API/Google/Middleware.php:165 src/API/Google/Middleware.php:346
+#: src/API/Google/Middleware.php:153 src/API/Google/Middleware.php:334
 msgid "Invalid response when creating account"
 msgstr "Respuesta no válida al crear la cuenta"
 
-#: src/API/Google/Middleware.php:109 src/API/Google/SiteVerification.php:59
-#: src/MerchantCenter/AccountService.php:453
+#: src/API/Google/Middleware.php:97 src/API/Google/SiteVerification.php:59
+#: src/MerchantCenter/AccountService.php:450
 msgid "Invalid site URL."
 msgstr "URL del sitio no válida."
 
-#: src/API/Google/Middleware.php:104 src/API/Google/Middleware.php:306
+#: src/API/Google/Middleware.php:92 src/API/Google/Middleware.php:294
 msgid "Unable to log accepted TOS"
 msgstr "No ha sido posible registrar las aceptaciones de las condiciones del servicio. "
 
-#: src/API/Google/Middleware.php:87
+#: src/API/Google/Middleware.php:75
 msgid "Error retrieving accounts"
 msgstr "Error al recuperar las cuentas"
 

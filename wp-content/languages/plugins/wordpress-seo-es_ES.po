@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Yoast SEO - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-12-23 07:30:27+0000\n"
+"PO-Revision-Date: 2025-01-21 09:21:54+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -3972,7 +3972,8 @@ msgstr "Fecha de publicación"
 
 #: admin/class-bulk-editor-list-table.php:866 js/dist/block-editor.js:149
 #: js/dist/classic-editor.js:134 js/dist/editor-modules.js:270
-#: js/dist/elementor.js:487 js/dist/wincher-dashboard-widget.js:43
+#: js/dist/elementor.js:487 js/dist/general-page.js:1
+#: js/dist/wincher-dashboard-widget.js:43
 #: js/dist/wincher-dashboard-widget.js:112
 msgid "View"
 msgstr "Ver"
