@@ -49,5 +49,30 @@ jQuery(function ($) {
         },
       },
     });
+
+    //Scroll Down
+    const $masthead = $("#masthead");
+
+    $(window).on("scroll", function () {
+      if ($(this).scrollTop() > 0) {
+        $masthead.addClass("scrolled");
+      } else {
+        $masthead.removeClass("scrolled");
+      }
+    });
+
+    // Iterar sobre todas las etiquetas de categoría con el atributo data-color
+    $(".category-badge a").each(function () {
+      // Obtener el color de la categoría desde data-color
+      var color = $(this).data("color");
+
+      // Aplicar el color al texto
+      $(this).css("color", color);
+
+      // Crear un color de fondo más claro utilizando un filtro CSS
+      $(this).css({
+        "background-color": color,
+      });
+    });
   });
 }); // jQuery End

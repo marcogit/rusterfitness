@@ -10,6 +10,16 @@ footer {
     position: relative;
     overflow: hidden;
 
+    @include media-breakpoint-down(xl) {
+      padding-top: $fit-space-section--med;
+      padding-bottom: $fit-space-section--med;
+    }
+
+    @include media-breakpoint-down(sm) {
+      padding-top: $fit-space-section--small;
+      padding-bottom: $fit-space-section--small;
+    }
+
     .bootscore-footer-columns {
       position: relative;
       z-index: 3;
@@ -38,7 +48,6 @@ footer {
       z-index: 1;
     }
 
-
     .img-guarantee {
       width: 100%;
       max-width: 78px;
@@ -54,10 +63,17 @@ footer {
         max-width: 365px;
         height: auto;
       }
+
+      @include media-breakpoint-down(lg) {
+        justify-content: center;
+      }
     }
 
     .footer-summary {
       padding-right: 8%;
+      @include media-breakpoint-down(lg) {
+        padding-right: 0;
+      }
 
       .wp-block-list {
         padding-left: $fit-space--big;
@@ -72,7 +88,8 @@ footer {
         flex-wrap: wrap;
         flex-direction: column;
         gap: $fit-space--small;
-  
+        padding-left: 0;
+
         li {
           a {
             color: white;
@@ -93,6 +110,12 @@ footer {
           }
         }
       }
+
+      .row-primary--col {
+        @include media-breakpoint-down(md) {
+          margin-block-end: $fit-space--small;
+        }
+      }
     }
 
     .row-secondary {
@@ -103,6 +126,11 @@ footer {
 
       p {
         margin: 0;
+
+        @include media-breakpoint-down(lg) {
+          text-align: center;
+          margin-bottom: $fit-space--small;
+        }
       }
     }
 
@@ -111,8 +139,11 @@ footer {
         font-weight: $f-bold;
         font-size: $f-size-base;
         margin-block-end: $fit-space--medium;
+
+        @include media-breakpoint-down(xl) {
+          margin-block-end: $fit-space--small !important;
+        }
       }
     }
-    
   }
 }

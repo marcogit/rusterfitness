@@ -19,7 +19,7 @@ defined('ABSPATH') || exit;
 <!-- Search toggler -->
 <?php if (is_active_sidebar('top-nav-search')) : ?>
   <div class="d-xl-none">
-    <button class="<?= apply_filters('bootscore/class/header/button', 'btn btn-outline-secondary', 'search-toggler'); ?> search-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-search" aria-expanded="false" aria-controls="collapse-search">
+    <button class="<?= apply_filters('bootscore/class/header/button', 'btn btn-icon', 'search-toggler'); ?> search-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-search" aria-expanded="false" aria-controls="collapse-search">
       <i class="fa-solid fa-magnifying-glass"></i><span class="visually-hidden-focusable">Search</span>
     </button>
   </div>
@@ -34,7 +34,7 @@ defined('ABSPATH') || exit;
 if (is_account_page() || is_checkout()) {
   // Do nothing
 } else { ?>
-  <button class="<?= apply_filters('bootscore/class/header/button', 'btn btn-outline-secondary', 'account-toggler'); ?> account-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-user" aria-controls="offcanvas-user">
+  <button class="<?= apply_filters('bootscore/class/header/button', 'btn btn-icon', 'account-toggler'); ?> account-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-user" aria-controls="offcanvas-user">
     <img src="<?= get_stylesheet_directory_uri(); ?>/assets/img/icon-user-white.svg" alt="Account"><span class="visually-hidden-focusable">Account</span>
   </button>
 <?php } ?>
@@ -58,12 +58,12 @@ if (is_cart()) {
   }
 
   ?>
-  <a class="<?= apply_filters('bootscore/class/header/button', 'btn btn-outline-secondary', 'back-to-cart'); ?> back-to-cart" href="<?= esc_url($back_to_cart_url); ?>">
+  <a class="<?= apply_filters('bootscore/class/header/button', 'btn btn-icon', 'back-to-cart'); ?> back-to-cart" href="<?= esc_url($back_to_cart_url); ?>">
     <i class="fa-solid fa-arrow-left d-none d-md-inline me-2"></i><i class="fa-solid fa-bag-shopping"></i><span class="visually-hidden-focusable">Return to <?= ($back_to_cart_url == wc_get_cart_url()) ? 'Cart' : 'Shop'; ?></span>
   </a>
 <?php } else { ?>
   <!-- Add mini-cart toggler -->
-  <button class="<?= apply_filters('bootscore/class/header/button', 'btn btn-outline-secondary', 'cart-toggler'); ?> position-relative cart-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-cart" aria-controls="offcanvas-cart">
+  <button class="<?= apply_filters('bootscore/class/header/button', 'btn btn-icon', 'cart-toggler'); ?> position-relative cart-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-cart" aria-controls="offcanvas-cart">
 
     <img src="<?= get_stylesheet_directory_uri(); ?>/assets/img/icon-cart-white.svg" alt="Cart"><span class="visually-hidden-focusable">Cart</span>
     <?php if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_option('active_plugins')))) {

@@ -58,11 +58,17 @@ defined('ABSPATH') || exit;
       <nav id="nav-main" class="navbar <?= apply_filters('bootscore/class/header/navbar/breakpoint', 'navbar-expand-lg'); ?>">
 
         <div class="<?= apply_filters('bootscore/class/container', 'container', 'header'); ?>">
-          <!-- Navbar Brand -->
-          <a class="navbar-brand" href="<?= esc_url(home_url()); ?>">
-            <img src="<?= esc_url(apply_filters('bootscore/logo', get_stylesheet_directory_uri() . '/assets/img/logo/ruster_logo_header_white.svg', 'default')); ?>" alt="<?php bloginfo('name'); ?> Logo" class="d-td-none me-2">
-            <img src="<?= esc_url(apply_filters('bootscore/logo', get_stylesheet_directory_uri() . '/assets/img/logo/logo-theme-dark.svg', 'theme-dark')); ?>" alt="<?php bloginfo('name'); ?> Logo" class="d-tl-none me-2">
-          </a>
+          <div class="navbar-left">
+            <!-- Navbar Toggler -->
+            <button class="<?= apply_filters('bootscore/class/header/button', 'btn', 'nav-toggler'); ?> <?= apply_filters('bootscore/class/header/navbar/toggler/breakpoint', 'd-lg-none'); ?> btn-icon nav-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-navbar" aria-controls="offcanvas-navbar">
+              <i class="fa-solid fa-bars"></i><span class="visually-hidden-focusable">Menu</span>
+            </button>
+            <!-- Navbar Brand -->
+            <a class="navbar-brand" href="<?= esc_url(home_url()); ?>">
+              <img src="<?= esc_url(apply_filters('bootscore/logo', get_stylesheet_directory_uri() . '/assets/img/logo/ruster_logo_header_white.svg', 'default')); ?>" alt="<?php bloginfo('name'); ?> Logo" class="d-td-none me-2">
+              <img src="<?= esc_url(apply_filters('bootscore/logo', get_stylesheet_directory_uri() . '/assets/img/logo/logo-theme-dark.svg', 'theme-dark')); ?>" alt="<?php bloginfo('name'); ?> Logo" class="d-tl-none me-2">
+            </a>
+          </div>
 
           <!-- Offcanvas Navbar -->
           <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas-navbar">
@@ -97,11 +103,6 @@ defined('ABSPATH') || exit;
               get_template_part('template-parts/header/actions');
             endif;
             ?>
-
-            <!-- Navbar Toggler -->
-            <button class="<?= apply_filters('bootscore/class/header/button', 'btn btn-outline-secondary', 'nav-toggler'); ?> <?= apply_filters('bootscore/class/header/navbar/toggler/breakpoint', 'd-lg-none'); ?> ms-1 ms-md-2 nav-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-navbar" aria-controls="offcanvas-navbar">
-              <i class="fa-solid fa-bars"></i><span class="visually-hidden-focusable">Menu</span>
-            </button>
 
           </div><!-- .header-actions -->
 

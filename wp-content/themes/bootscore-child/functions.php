@@ -30,6 +30,23 @@ function bootscore_child_enqueue_styles()
 }
 
 /**
+ * BLOG widget area
+ */
+function bootscore_child_widgets_init()
+{
+  register_sidebar(array(
+    'name'          => __('Post Bottom', 'bootscore-child'),
+    'id'            => 'post-bottom',
+    'description'   => __('Widget area for the single.php template', 'bootscore-child'),
+    'before_widget' => '<div class="widget post-bottom-widget">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h4 class="widget-title">',
+    'after_title'   => '</h4>',
+  ));
+}
+add_action('widgets_init', 'bootscore_child_widgets_init');
+
+/**
  * Register custom menus
  */
 add_action('init', 'register_custom_menus');
@@ -56,52 +73,102 @@ function ruster_blocks_category($categories, $post)
 add_filter('block_categories_all', 'ruster_blocks_category', 10, 2);
 
 /**
- * Blocks Enlaces Directos
+ * Registra bloques ACF (Enlaces directos, carruseles, etc.)
  */
-function my_acf_init()
+function my_acf_init_blocks()
 {
-  // Check function exists.
-  if (function_exists('acf_register_block_type')) {
-    // Block - Enlaces Directos
-    acf_register_block_type(array(
-      'name'              => 'direct-link',
-      'title'             => __('Acceso Directo'),
-      'description'       => __('Bloque de acceso directo'),
-      'render_template'   => 'template-parts/blocks/direct-link/direct-link.php',
-      'category'          => 'ruster-blocks',
-      'icon'              => 'admin-links',
-      'keywords'          => array('link'),
-    ));
-    // Block - Enlace Directo Grande con fondo
-    acf_register_block_type(array(
-      'name'              => 'max-direct-link',
-      'title'             => __('Acceso Directo Grande con fondo'),
-      'description'       => __('Bloque de acceso directo'),
-      'render_template'   => 'template-parts/blocks/direct-link-big/direct-link-big.php',
-      'category'          => 'ruster-blocks',
-      'icon'              => 'admin-links',
-      'keywords'          => array('link'),
-    ));
-    // Block - Carrusel Automático
-    acf_register_block_type(array(
-      'name'              => 'auto-carrusel-bar',
-      'title'             => __('Carrusel Automático'),
-      'description'       => __(''),
-      'render_template'   => 'template-parts/blocks/auto-carrusel-bar/auto-carrusel-bar.php',
-      'category'          => 'ruster-blocks',
-      'icon'              => 'text',
-      'keywords'          => array('carrusel'),
-    ));
-    // Block - Logos Slider
-    acf_register_block_type(array(
-      'name'              => 'logos-slider',
-      'title'             => __('Carrusel de Logotipos'),
-      'description'       => __(''),
-      'render_template'   => 'template-parts/blocks/logos/logos.php',
-      'category'          => 'ruster-blocks',
-      'icon'              => 'slides',
-      'keywords'          => array('logos'),
-    ));
+  // Verificar si la función existe
+  if (! function_exists('acf_register_block_type')) {
+    return;
   }
+
+  // Bloque: Enlaces Directos
+  acf_register_block_type(array(
+    'name'              => 'direct-link',
+    'title'             => __('Acceso Directo', 'bootscore-child'),
+    'description'       => __('Bloque de acceso directo', 'bootscore-child'),
+    'render_template'   => 'template-parts/blocks/direct-link/direct-link.php',
+    'category'          => 'ruster-blocks',
+    'icon'              => 'admin-links',
+    'keywords'          => array('link'),
+  ));
+
+  // Bloque: Enlace Directo Grande con fondo
+  acf_register_block_type(array(
+    'name'              => 'max-direct-link',
+    'title'             => __('Acceso Directo Grande con fondo', 'bootscore-child'),
+    'description'       => __('Bloque de acceso directo', 'bootscore-child'),
+    'render_template'   => 'template-parts/blocks/direct-link-big/direct-link-big.php',
+    'category'          => 'ruster-blocks',
+    'icon'              => 'admin-links',
+    'keywords'          => array('link'),
+  ));
+
+  // Bloque: Carrusel Automático
+  acf_register_block_type(array(
+    'name'              => 'auto-carrusel-bar',
+    'title'             => __('Carrusel Automático', 'bootscore-child'),
+    'description'       => __('', 'bootscore-child'),
+    'render_template'   => 'template-parts/blocks/auto-carrusel-bar/auto-carrusel-bar.php',
+    'category'          => 'ruster-blocks',
+    'icon'              => 'text',
+    'keywords'          => array('carrusel'),
+  ));
+
+  // Bloque: Logos Slider
+  acf_register_block_type(array(
+    'name'              => 'logos-slider',
+    'title'             => __('Carrusel de Logotipos', 'bootscore-child'),
+    'description'       => __('', 'bootscore-child'),
+    'render_template'   => 'template-parts/blocks/logos/logos.php',
+    'category'          => 'ruster-blocks',
+    'icon'              => 'slides',
+    'keywords'          => array('logos'),
+  ));
 }
+add_action('acf/init', 'my_acf_init_blocks', 10);
+
+/**
+ * Color de la categoría
+ */
+// Registrar el campo de color para las categorías
+
+
+// Función para obtener el color de la categoría
+function get_category_color($term_id)
+{
+  $color = get_field('color_de_texto', 'category_' . $term_id);
+  return $color ? $color : '#000000'; // Valor por defecto si no se ha seleccionado un color
+}
+
+// Función para obtener el fondo de la categoría
+function get_category_background($term_id)
+{
+  $background = get_field('fondo', 'category_' . $term_id);
+  return $background ? $background : '#FFFFFF'; // Valor por defecto si no se ha seleccionado un fondo
+}
+
+if (!function_exists('bootscore_category_badge')) :
+  function bootscore_category_badge()
+  {
+    // Hide category and tag text for pages.
+    if ('post' === get_post_type()) {
+      echo '<p class="category-badge">';
+      $thelist = '';
+      $i       = 0;
+      foreach (get_the_category() as $category) {
+        if (0 < $i) $thelist .= ' ';
+        // Usar las funciones para obtener el color y fondo de la categoría
+        $category_color = get_category_color($category->term_id);
+        $category_background = get_category_background($category->term_id);
+        $class = apply_filters('bootscore/class/badge/category', 'badge');
+        $thelist .= '<a href="' . esc_url(get_category_link($category->term_id)) . '" class="' . esc_attr($class) . '" style="color: ' . esc_attr($category_color) . '; background-color: ' . esc_attr($category_background) . ';">' . $category->name . '</a>';
+        $i++;
+      }
+      echo $thelist;
+      echo '</p>';
+    }
+  }
+endif;
+
 add_action('acf/init', 'my_acf_init');

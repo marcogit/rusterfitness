@@ -3,27 +3,32 @@
 */
 header {
   &#masthead {
+    transition: $transition-normal;
+    background: $primary;
+
     .header-top {
       border-bottom: solid 1px $light;
       padding: $fit-space--small 0;
       background: $dark-op;
+      transition: $transition-normal;
+      overflow: hidden;
 
       @include media-breakpoint-down(xl) {
         display: none;
       }
 
-      .header-top-menu{
+      .header-top-menu {
         display: flex;
         gap: $fit-space--small;
         list-style: none;
         padding: 0;
         margin: 0;
-  
+
         li {
-          a{
+          a {
             font-family: $font-family-alternative;
             font-size: $f-size-min;
-            color:  $light;
+            color: $light;
           }
         }
       }
@@ -31,6 +36,26 @@ header {
 
     #nav-main {
       padding: $fit-space 0;
+      transition: $transition-normal;
+
+      .navbar-left {
+        display: flex;
+        align-items: center;
+        gap: 0;
+      }
+
+      .navbar-brand {
+        width: $logo-size;
+
+        @include media-breakpoint-down(lg) {
+          width: $logo-size--mobile;
+        }
+
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
 
       .header-actions {
         display: flex;
@@ -38,20 +63,8 @@ header {
         justify-content: flex-end;
         gap: $fit-space--small;
 
-        .btn-outline-secondary {
-          border-color: transparent;
-          color: white;
-          padding: 0;
-          border-radius: none;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 40px;
-          height: 40px;
-
-          &.search-toggler {
-            border: solid 2px $light;
-          }
+        @include media-breakpoint-down(lg) {
+          gap: $fit-space--small-x;
         }
 
         .searchform {
@@ -74,7 +87,7 @@ header {
         }
       }
     }
-    
+
     #bootscore-navbar {
       gap: $fit-space--small;
       .menu-item {
@@ -84,13 +97,95 @@ header {
           font-weight: 400;
           text-transform: uppercase;
           padding: 0 $fit-space--small-x;
-          color:  $light;
+          color: $light;
           transition: $transition-normal;
 
           &:hover {
             opacity: $op-med;
           }
         }
+      }
+    }
+
+    &.scrolled {
+      .header-top {
+        height: 0;
+        padding: 0;
+        opacity: 0;
+      }
+
+      #nav-main {
+        padding: $fit-space--small 0;
+
+        @include media-breakpoint-down(lg) {
+          padding: $fit-space--small-x 0;
+        }
+
+        .navbar-brand {
+          width: $logo-size--mobile;
+        }
+      }
+    }
+  }
+
+  &.entry-header {
+    // Date Box
+    .date-box {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: $fit-space--small;
+
+      img {
+        border-radius: $border-radius--max;
+      }
+
+      .date-box--text {
+        display: flex;
+        flex-direction: column;
+        gap: $fit-space--small-x;
+        
+        @include media-breakpoint-down(md) {
+          gap: $fit-space--small-xx;
+        }
+
+        .byline {
+          font-size: $f-size-big;
+
+          @include media-breakpoint-down(md) {
+            font-size: $f-size-base;
+            font-weight: $f-bold;
+          }
+
+          a {
+            color: $dark;
+            &:hover {
+              color: $primary;
+            }
+          }
+        }
+
+        .posted-on {
+          font-size: $f-size-min;
+          color: $dark-op;
+
+          @include media-breakpoint-down(md) {
+            font-size: $f-size-small;
+            line-height: $f-lh-small;
+          }
+        }
+      }
+    }
+  }
+}
+
+.home {
+  header {
+    &#masthead {
+      background: transparent;
+
+      &.scrolled {
+        background: $primary;
       }
     }
   }

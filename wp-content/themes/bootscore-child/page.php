@@ -24,21 +24,42 @@ get_header();
   <div id="primary" class="content-area">
 
     <main id="main" class="site-main">
-
-      <div class="wp-block-group page-header page-header--dark">
-        <?php bootscore_post_thumbnail(); ?>
+      <?php
+      $image_url = get_the_post_thumbnail_url();
+      if ($image_url) {
+        echo '<style>
+            .page-header--bg {
+              background-image: url(' . esc_url($image_url) . ');
+            }
+          </style>';
+      }
+      ?>
+      <div class="wp-block-group page-header page-header--bg">
         <div class="wp-block-columns">
           <div class="wp-block-column">
             <?php the_post(); ?>
             <h1 class="page-header--title"><?php the_title(); ?></h1>
-            <p class="h6 page-header--subtitle"><?php echo esc_html(get_field('subtitle')); ?></p>
+            <div class="page-header--subtitle">
+              <?php echo esc_html(get_field('subtitle')); ?>
+            </div>
           </div>
           <span class="page-header--sticker"><?php the_title(); ?></span>
         </div>
       </div>
 
       <div class="entry-content">
-        <?php the_breadcrumb(); ?>
+        <section class="wp-block-group section-smaller">
+          <div class="wp-block-columns">
+            <div class="wp-block-column">
+              <?php
+              if (function_exists('yoast_breadcrumb')) {
+                yoast_breadcrumb('<div id="breadcrumbs">', '</div>');
+              }
+              ?>
+            </div>
+          </div>
+        </section>
+
         <?php the_content(); ?>
       </div>
 

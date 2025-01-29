@@ -25,7 +25,7 @@ defined('ABSPATH') || exit;
     <div class="<?= apply_filters('bootscore/class/container', 'container', 'footer-columns'); ?>">
 
       <div class="row row-primary">
-        <div class="col">
+        <div class="col-lg">
           <?php if (is_active_sidebar('footer-top')) : ?>
             <div class="footer-summary">
               <?php dynamic_sidebar('footer-top'); ?>
@@ -33,25 +33,25 @@ defined('ABSPATH') || exit;
           <?php endif; ?>
         </div>
 
-        <div class="<?= apply_filters('bootscore/class/footer/col', 'col-6 col-lg-2', 'footer-1'); ?>">
+        <div class="<?= apply_filters('bootscore/class/footer/col', 'row-primary--col col-12 col-md-3 col-lg-2', 'footer-1'); ?>">
           <?php if (is_active_sidebar('footer-1')) : ?>
             <?php dynamic_sidebar('footer-1'); ?>
           <?php endif; ?>
         </div>
 
-        <div class="<?= apply_filters('bootscore/class/footer/col', 'col-6 col-lg-2', 'footer-2'); ?>">
+        <div class="<?= apply_filters('bootscore/class/footer/col', 'row-primary--col col-12 col-md-3 col-lg-2', 'footer-2'); ?>">
           <?php if (is_active_sidebar('footer-2')) : ?>
             <?php dynamic_sidebar('footer-2'); ?>
           <?php endif; ?>
         </div>
 
-        <div class="<?= apply_filters('bootscore/class/footer/col', 'col-6 col-lg-2', 'footer-3'); ?>">
+        <div class="<?= apply_filters('bootscore/class/footer/col', 'row-primary--col col-12 col-md-3 col-lg-2', 'footer-3'); ?>">
           <?php if (is_active_sidebar('footer-3')) : ?>
             <?php dynamic_sidebar('footer-3'); ?>
           <?php endif; ?>
         </div>
 
-        <div class="<?= apply_filters('bootscore/class/footer/col', 'col-6 col-lg-1', 'footer-4'); ?>">
+        <div class="<?= apply_filters('bootscore/class/footer/col', 'row-primary--col col-12 col-md-3 col-lg-2', 'footer-4'); ?>">
           <?php if (is_active_sidebar('footer-4')) : ?>
             <?php dynamic_sidebar('footer-4'); ?>
           <?php endif; ?>
@@ -88,7 +88,7 @@ defined('ABSPATH') || exit;
 </footer>
 
 <!-- To top button -->
-<a href="#" class="<?= apply_filters('bootscore/class/footer/to_top_button', 'btn btn-primary shadow'); ?> position-fixed zi-1000 top-button"><i class="fa-solid fa-chevron-up"></i><span class="visually-hidden-focusable">To top</span></a>
+<a href="#" class="<?= apply_filters('bootscore/class/footer/to_top_button', 'btn btn-primary btn-icon shadow'); ?> position-fixed zi-1000 top-button"><i class="fa-solid fa-chevron-up"></i><span class="visually-hidden-focusable">To top</span></a>
 
 </div><!-- #page -->
 

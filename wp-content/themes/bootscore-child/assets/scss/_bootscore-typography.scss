@@ -5,37 +5,62 @@ h1,
 .h1,
 h2,
 .h2 {
+  color: $dark;
   font-size: $f-size-extrabig;
   line-height: $f-lh-titles;
   margin-block-end: $fit-title-space !important;
   font-family: $font-family-alternative;
   text-transform: uppercase;
   font-weight: 700;
+
+  @include media-breakpoint-down(xl) {
+    font-size: $f-size-medbig;
+  }
+
+  @include media-breakpoint-down(md) {
+    font-size: $f-size-big;
+  }
 }
 
 h3,
 .h3 {
+  color: $dark;
   font-size: $f-size-medbig;
   font-family: $font-family-alternative;
   line-height: $f-lh-titles;
-  margin-block-end: $fit-title-space !important;
   font-weight: $f-bold;
   margin-block-end: $fit-space--small !important;
   text-transform: uppercase;
+
+  @include media-breakpoint-down(md) {
+    font-size: $f-size-big;
+  }
 }
 
 h4,
 .h4 {
+  color: $dark;
   font-family: $font-family-alternative;
-  font-size: $f-size-minbig;
-  line-height: $f-lh-titles;
-  margin-bottom: 0 !important;
-  margin-bottom: $fit-space--small-x !important;
+  font-size: $f-size-big;
+  line-height: $f-lh-small;
+  font-weight: $f-bold;
+  margin-bottom: $fit-space--small !important;
   text-transform: uppercase;
+
+  @include media-breakpoint-down(lg) {
+    font-size: $f-size-minbig;
+  }
+
+  @include media-breakpoint-down(sm) {
+    font-size: $f-size-medium;
+  }
+
+  
 }
 
 h5,
 .h5 {
+  color: $dark;
   font-family: $font-family-alternative;
   font-size: $f-size-base;
   text-transform: uppercase;
@@ -43,8 +68,9 @@ h5,
 
 h6,
 .h6 {
+  color: $dark;
   font-family: $font-family-alternative;
-  font-size:$f-size-min;
+  font-size: $f-size-min;
   text-transform: uppercase;
 }
 
@@ -56,13 +82,221 @@ a {
 ul {
   &#footer-menu {
     margin-left: $fit-space--small-x;
+
+    @include media-breakpoint-down(lg) {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: $fit-space--small;
+    }
+
+    @include media-breakpoint-down(sm) {
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      gap: $fit-space--small;
+    }
+
     .menu-item {
       border-left: solid 1px $light;
+
+      @include media-breakpoint-down(sm) {
+        border-left: none;
+      }
+
       a {
         list-style: none;
         padding: 0 $fit-space--small-x;
         margin: 0;
         text-decoration: underline;
+      }
+    }
+  }
+
+  &.nav-categories-full {
+    display: flex;
+    flex-wrap: nowrap;
+    @include media-breakpoint-down(xxl) {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: $fit-space--small-x;
+    }
+
+    @include media-breakpoint-down(xl) {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x proximity;
+      scrollbar-width: none;
+      scroll-behavior: smooth;
+      justify-content: flex-start;
+      padding-left: $fit-space;
+      padding-right: $fit-space;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    li {
+      flex: 1;
+
+      @include media-breakpoint-down(xxl) {
+        flex: 0 0 auto;
+      }
+
+      a {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        font-family: $font-family-alternative;
+        text-transform: uppercase;
+        color: white;
+        font-size: $f-size-minbig;
+        font-weight: $f-regular;
+
+        @include media-breakpoint-down(xl) {
+          background: white;
+          color: $dark;
+          border-radius: $border-radius--max;
+          font-size: $f-size-min;
+          border: solid 1px $dark;
+          font-weight: $f-bold;
+        }
+
+        &:hover {
+          background: $primary;
+          color: white;
+
+          @include media-breakpoint-down(xl) {
+            background: $dark;
+          }
+        }
+      }
+
+      &.active {
+        a {
+          background: $primary;
+          color: white;
+
+          @include media-breakpoint-down(xl) {
+            background: $dark;
+          }
+        }
+      }
+    }
+  }
+
+  &.wp-block-categories-list {
+    width: 100%;
+    gap: $fit-space--small-x;
+    border-color: transparent;
+    flex-direction: column;
+
+    .cat-item {
+      padding: 0;
+      border-color: transparent;
+      flex: 1;
+
+      a {
+        font-weight: $f-bold;
+        padding: $fit-space--small-btn $fit-space--small;
+        border: $dark solid 1px;
+        border-radius: $border-radius--small;
+        display: block;
+        display: flex;
+        flex: 1;
+
+        &:hover,
+        &:focus,
+        &:active {
+          background: $dark;
+          color: white;
+        }
+      }
+
+      &:hover {
+        background: transparent;
+      }
+    }
+  }
+
+  &.wp-block-latest-posts__list {
+    .list-group-item {
+      padding: 0;
+      border-radius: 0;
+      border-color: transparent;
+      display: flex;
+      flex-direction: column;
+      gap: $fit-space--small-x;
+
+      & > .stretched-link {
+        order: 3;
+        padding: 0 $fit-space--small;
+        font-size: $f-size-medium;
+        font-weight: $f-bold;
+      }
+
+      .wp-block-latest-posts__featured-image {
+        order: 1;
+        margin-bottom: $fit-space--small-x;
+
+        .stretched-link {
+          padding: 0;
+          display: block;
+          overflow: hidden;
+
+          img {
+            border-radius: 0 !important;
+            margin: 0 !important;
+            transition: $transition-normal;
+          }
+        }
+      }
+
+      .text-body-secondary {
+        order: 5;
+        padding: $fit-space--small-x 0;
+        margin: $fit-space--small-x $fit-space--small 0;
+        font-size: $f-size-small;
+        border-top: solid 1px $dark-op-x;
+        display: flex;
+        flex: 1;
+
+        &.d-block {
+          order: 2;
+          border: none;
+          padding: 0 $fit-space--small;
+          margin: 0;
+        }
+      }
+
+      .wp-block-latest-posts__post-excerpt {
+        order: 4;
+        padding: 0 $fit-space--small;
+        font-size: $f-size-small;
+        line-height: $f-lh-special;
+
+        .stretched-link {
+          display: none;
+        }
+      }
+
+      &:hover {
+        background: transparent;
+
+        .wp-block-latest-posts__featured-image {
+          .stretched-link {
+            img {
+              transform: scale(1.05);
+            }
+          }
+        }
+
+        & > .stretched-link {
+          color: $primary;
+        }
       }
     }
   }
@@ -75,7 +309,7 @@ ul {
     font-size: $f-size-minbig;
     font-weight: $f-bold;
     border-radius: 0;
-    padding: $fit-space--small $fit-space--small;
+    padding: $fit-space--small-btn $fit-space--small;
     background-color: $dark;
 
     &:hover {
@@ -88,7 +322,9 @@ ul {
       background-color: transparent !important;
       color: $dark;
 
-      &:hover {
+      &:hover,
+      &:focus,
+      &:active {
         background-color: $dark !important;
         color: $light;
         filter: none;
@@ -115,5 +351,160 @@ ul {
         border-color: transparent !important;
       }
     }
+  }
+}
+
+.btn {
+  display: flex;
+  gap: $fit-space--small-x;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-family-alternative;
+  text-transform: uppercase;
+  font-size: $f-size-minbig;
+  font-weight: $f-bold;
+  border-radius: 0 !important;
+  padding: $fit-space--small-btn $fit-space--small;
+  background-color: $dark;
+  color: white;
+
+  &.btn-icon {
+    border-color: transparent;
+    background: transparent;
+    color: white;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+
+    &.search-toggler {
+      border: solid 2px $light;
+    }
+  }
+
+  &.btn-primary {
+    background: $primary;
+    color: white;
+  }
+
+  &.btn-outline-dark {
+    background: transparent;
+    color: $dark;
+    border-color: $dark;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: $dark;
+      color: white;
+
+      img {
+        filter: invert(1);
+      }
+    }
+  }
+
+  &.top-button {
+    left: 5%;
+    right: inherit;
+  }
+
+  &.nav-toggler {
+    justify-content: flex-start;
+  }
+
+  &.cart-toggler,
+  &.account-toggler {
+    justify-content: flex-end;
+  }
+
+  &.btn-share {
+    @include media-breakpoint-down(md) {
+      background: $dark;
+      padding: 0;
+      width: 40px;
+      height: 40px;
+    }
+
+    img {
+      @include media-breakpoint-down(md) {
+        filter: invert(1);
+      }
+    }
+
+    span {
+      @include media-breakpoint-down(md) {
+        display: none;
+      }
+    }
+  }
+}
+
+.meta {
+  font-size: $f-size-min;
+  color: $dark-op;
+}
+
+.badge {
+  font-family: $font-family-alternative;
+  font-size: $f-size-small;
+  font-weight: $f-bold;
+  text-transform: uppercase;
+  position: relative;
+
+  &.badge-tag {
+    border-radius: 0;
+    border: $dark-op-x solid 1px;
+  }
+}
+
+.entry-post {
+  .entry-content {
+    font-size: $f-size-medium;
+    line-height: $f-lh-big;
+
+    @include media-breakpoint-down(md) {
+      font-size: $f-size-base;
+      line-height: $f-lh-base;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: $font-family-base;
+
+      strong {
+        font-weight: $f-bold;
+      }
+    }
+
+    h2 {
+      font-size: $f-size-big;
+      margin-top: $fit-space--big;
+    }
+
+    h3 {
+      font-size: $f-size-minbig;
+    }
+
+    h4,
+    h5 {
+      font-size: $f-size-medium;
+    }
+
+    figure {
+      &.wp-block-image {
+        img {
+          border-radius: $border-radius--normal;
+        }
+      }
+    }
+  }
+}
+
+.wp-block-group--shop {
+  .page-title {
+    @extend .h4;
   }
 }
