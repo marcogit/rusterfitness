@@ -25,15 +25,18 @@ get_header();
     <main id="main" class="site-main">
 
       <!-- Header -->
-      <div class="wp-block-group page-header">
+      <div class="wp-block-group page-header page-header--blog">
         <div class="wp-block-columns">
           <div class="wp-block-column">
-            <h1><?php bloginfo('name'); ?></h1>
-            <p class="lead mb-0"><?php bloginfo('description'); ?></p>
+            <h1><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo/ruster_logo_blog.svg" alt="<?php bloginfo('name'); ?>" /></h1>
           </div>
+          <span class="page-header--sticker">Blog</span>
+          <a href="#categories-bar" class="btn btn-icon btn-icon--big btn-dark btn-radius">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/arrow-white--bottom.svg" alt="Arrow Down" />
+          </a>
         </div>
       </div>
-      <aside class="wp-block-group aside-categories-full">
+      <aside class="wp-block-group aside-categories-full" id="categories-bar">
         <div class="wp-block-columns mb-0">
           <div class="wp-block-column">
             <ul class="nav nav-categories-full">

@@ -376,6 +376,11 @@ ul {
     width: 40px;
     height: 40px;
 
+    &.btn-icon--big {
+      width: 60px;
+      height: 60px;
+    }
+
     &.search-toggler {
       border: solid 2px $light;
     }
@@ -384,6 +389,14 @@ ul {
   &.btn-primary {
     background: $primary;
     color: white;
+  }
+
+  &.btn-dark {
+    background: $dark;
+
+    &:hover {
+      background: $primary;
+    }
   }
 
   &.btn-outline-dark {
@@ -401,6 +414,10 @@ ul {
         filter: invert(1);
       }
     }
+  }
+
+  &.btn-radius {
+    border-radius: $border-radius--max !important;
   }
 
   &.top-button {

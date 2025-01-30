@@ -63,7 +63,7 @@ header {
         justify-content: flex-end;
         gap: $fit-space--small;
 
-        @include media-breakpoint-down(lg) {
+        @include media-breakpoint-down(xl) {
           gap: $fit-space--small-x;
         }
 
@@ -82,6 +82,14 @@ header {
 
             &:focus {
               box-shadow: none;
+            }
+          }
+        }
+
+        .cart-toggler {
+          .cart-content {
+            .cart-total {
+              display: none !important;
             }
           }
         }

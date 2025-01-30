@@ -146,6 +146,72 @@ body {
     height: 0px;
     opacity: 0;
   }
+
+  &.page-header--blog {
+    background: #F3F3F3;
+    position: relative;
+
+    @include media-breakpoint-down(md) {
+      height: 100vh;
+      padding: 0;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      background: url(../img/ruster_bg_blog.svg) repeat center center;
+    }
+
+    .btn-icon {
+      position: absolute;
+      bottom: $fit-space;
+      left: calc(50% - 30px);
+      display: none;
+
+      @include media-breakpoint-down(md) {
+        display: flex;
+      }
+    }
+
+    .wp-block-columns {
+      position: relative;
+      z-index: 2;
+
+      @include media-breakpoint-down(md) {
+        height: 100%;
+      }
+
+      .wp-block-column {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include media-breakpoint-down(md) {
+          height: 100%;
+        }
+
+        h1 {
+          margin-block-end: 0 !important;
+        }
+
+        img {
+          @include media-breakpoint-down(lg) {
+            max-width: 300px;
+          }
+
+          @include media-breakpoint-down(md) {
+            max-width: 200px;
+          }
+        }
+      }
+    }
+  }
 }
 
 // Breadcrumb
@@ -404,6 +470,12 @@ nav {
 
         .block-description {
           margin-top: $fit-space;
+          color: $light;
+          font-weight: $f-bold;
+        }
+
+        .block-title {
+          color: $light;
         }
       }
     }
