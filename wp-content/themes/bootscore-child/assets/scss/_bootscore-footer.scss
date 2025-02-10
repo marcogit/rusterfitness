@@ -139,6 +139,7 @@ footer {
         font-weight: $f-bold;
         font-size: $f-size-base;
         margin-block-end: $fit-space--medium;
+        color: $light;
 
         @include media-breakpoint-down(xl) {
           margin-block-end: $fit-space--small !important;

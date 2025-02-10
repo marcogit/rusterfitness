@@ -125,6 +125,17 @@ function my_acf_init_blocks()
     'icon'              => 'slides',
     'keywords'          => array('logos'),
   ));
+
+  // Bloque: Hero Banner
+  acf_register_block_type(array(
+    'name'              => 'hero-banner',
+    'title'             => __('Hero Banner', 'bootscore-child'),
+    'description'       => __('Bloque de Hero Banner', 'bootscore-child'),
+    'render_template'   => 'template-parts/blocks/hero-banner/hero-banner.php',
+    'category'          => 'ruster-blocks',
+    'icon'              => 'slides',
+    'keywords'          => array('hero', 'banner'),
+));
 }
 add_action('acf/init', 'my_acf_init_blocks', 10);
 

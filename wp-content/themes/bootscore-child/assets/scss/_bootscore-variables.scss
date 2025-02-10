@@ -76,6 +76,7 @@ $light: #ffffff;
 $light-op: rgba(255,255,255,0.4);
 $dark: #000000;
 $dark-op: rgba(0,0,0,0.6);
+$dark-op-md: rgba(0,0,0,0.35);
 $dark-op-x: rgba(0,0,0,0.1);
 $warning: #ff0000;
 $info: #b2b2b2;
@@ -93,6 +94,7 @@ $f-size-minbig: 1.25rem; //20px
 $f-size-big: 1.5rem; //24px
 $f-size-medbig: 2.5rem; //40px
 $f-size-extrabig: 4.375rem; //70px
+$f-size-hero: 12rem; //70px
 
 $f-lh-special: 1.6em;
 $f-lh-titles: 1em;
@@ -100,6 +102,7 @@ $f-lh-titles--sm: 1.12em;
 $f-lh-big: 1.4em;
 $f-lh-base: 1.375em;
 $f-lh-small: 1.25em;
+$f-lh-hero: 0.85em;
 
 $f-regular: 400;
 $f-bold: 700;
