@@ -112,6 +112,10 @@ header {
             opacity: $op-med;
           }
         }
+
+        .dropdown-menu {
+          top: 100% !important;
+        }
       }
     }
 

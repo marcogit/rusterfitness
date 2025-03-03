@@ -40,9 +40,9 @@ get_header();
 
               foreach ($categories as $category) {
                 if ($category->parent == 0) {
-                  echo '<li class="category-item">';
+                  echo '<li class="category-item"><div class="dropdown dropdown-cat-menu">';
                   $active_class = (is_tax('product_cat', $category->term_id)) ? ' active' : '';
-                  echo '<a class="category-item--link' . $active_class . '" href="' . get_term_link($category) . '">' . $category->name . '</a>';
+                  echo '<a role="button" data-bs-toggle="dropdown" aria-expanded="false" class="category-item--link dropdown-toggle' . $active_class . '" href="' . get_term_link($category) . '">' . $category->name . '</a>';
 
                   // Check for subcategories
                   $subcategories = get_terms(array(
@@ -52,16 +52,25 @@ get_header();
                   ));
 
                   if (!empty($subcategories) && !is_wp_error($subcategories)) {
-                    echo '<ul class="subcategories">';
+                    echo '<div class="dropdown-menu"><ul class="dropdown-list">';
                     foreach ($subcategories as $subcategory) {
                       echo '<li class="subcategory-item">';
-                      echo '<a href="' . get_term_link($subcategory) . '">' . $subcategory->name . '</a>';
+                        $thumbnail_id = get_term_meta($subcategory->term_id, 'thumbnail_id', true);
+                        $image_url = wp_get_attachment_url($thumbnail_id);
+                        if ($image_url) {
+                          echo '<a class="dropdown-link" href="' . get_term_link($subcategory) . '">';
+                          echo '<img src="' . esc_url($image_url) . '" alt="' . esc_attr($subcategory->name) . '" class="subcategory-image" />';
+                          echo $subcategory->name;
+                          echo '</a>';
+                        } else {
+                          echo '<a class="dropdown-link" href="' . get_term_link($subcategory) . '">' . $subcategory->name . '</a>';
+                        }
                       echo '</li>';
                     }
-                    echo '</ul>';
+                    echo '</ul></div>';
                   }
 
-                  echo '</li>';
+                  echo '</div></li>';
                 }
               }
 

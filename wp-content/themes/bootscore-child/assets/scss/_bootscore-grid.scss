@@ -299,6 +299,42 @@ aside {
         }
       }
 
+      .wc-block-product-categories-list {
+        .list-group-item {
+          flex-direction: column !important;
+          justify-content: flex-start !important;
+
+          a {
+            display: block;
+            text-align: left;
+            width: 100%;
+
+            &:hover {
+              color: $primary;
+            }
+          }
+
+          .wc-block-product-categories-list {
+            width: 100%;
+
+            li {
+              border-bottom: none !important;
+              padding-left: 0 !important;
+
+              a {
+                display: block;
+                font-size: $f-size-min;
+                color: $dark-op;
+
+                &:hover {
+                  color: $primary;
+                }
+              }
+            }
+          }
+        }
+      }
+
       .wp-block-cover {
         border-radius: $border-radius--normal;
       }

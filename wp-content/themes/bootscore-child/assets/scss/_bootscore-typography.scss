@@ -516,6 +516,63 @@ ul {
   }
 }
 
+.dropdown-cat-menu {
+  position: inherit;
+  .dropdown-menu {
+    display: none;
+    padding: 0 !important;
+    border-color: $dark-op-x;
+    box-shadow: $shadow-card;
+    left: 0 !important;
+    right: 0 !important;
+    background: $secondary;
+    color: white;
+    transform: translateY(53px) !important;
+
+    .dropdown-list {
+      padding: $fit-space--small !important;
+      display: flex;
+      gap: $fit-space--small;
+      justify-content:center;
+      align-items: start;
+      flex-direction: row !important;
+      list-style: none;
+      margin: 0;
+
+      li {
+        height: 100%;
+        a {
+          font-family: $font-family-alternative;
+          font-size: $f-size-base;
+          color: white;
+          text-align: center;
+          padding: $fit-space--small;
+          text-transform: uppercase;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          align-items: center;
+          height: 100%;
+          gap: $fit-space--small-x;
+
+          &:hover {
+            background: $primary;
+          }
+        }
+      }
+    }
+
+    &.show {
+      display: block;
+    }
+  }
+}
+
+.woocommerce-button {
+  @extend .btn;
+  @extend .btn-primary;
+}
+
 .wp-element-button {
   @extend .btn;
   @extend .btn-small;
