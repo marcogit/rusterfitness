@@ -27,18 +27,42 @@ if (!comments_open()) {
 ?>
 <div id="reviews" class="woocommerce-Reviews">
   <div id="woo-comments">
-    <h2 class="woocommerce-Reviews-title">
-      <?php
-      $count = $product->get_review_count();
-      if ($count && wc_review_ratings_enabled()) {
-        /* translators: 1: reviews count 2: product name */
-        $reviews_title = sprintf(esc_html(_n('%1$s review for %2$s', '%1$s reviews for %2$s', $count, 'woocommerce')), esc_html($count), '<span>' . get_the_title() . '</span>');
-        echo apply_filters('woocommerce_reviews_title', $reviews_title, $count, $product); // WPCS: XSS ok.
-      } else {
-        esc_html_e('Reviews', 'woocommerce');
-      }
-      ?>
-    </h2>
+    <span class="woocommerce-Reviews-title h4">
+      <?php esc_html_e('Reviews', 'woocommerce'); ?>
+    </span>
+
+    <?php
+    // Obtener el producto actual correctamente
+    global $product;
+    if (!$product) {
+      $product = wc_get_product(get_the_ID());
+    }
+
+    // Obtener la media de valoración y el número total de valoraciones
+    $average = $product ? $product->get_average_rating() : 0;
+    $count   = $product ? $product->get_review_count() : 0;
+    ?>
+
+    <?php if ($count > 0) : // Solo mostrar si hay valoraciones 
+    ?>
+      <div class="woocommerce-product-rating woocommerce-product-rating--average">
+
+        <!-- Mostrar la media de la valoración numérica -->
+        <div class="average-rating">
+          <strong class="h3 average-rating--number"><?php echo esc_html(number_format($average, 1)); ?></strong> / 5
+        </div>
+        <!-- Mostrar las estrellas -->
+        <div class="star-rating" title="<?php echo esc_attr($average . ' de 5'); ?>">
+          <span style="width:<?php echo ((float) $average / 5) * 100; ?>%"></span>
+        </div>
+
+        <!-- Mostrar el número de valoraciones -->
+        <span class="woocommerce-review-link">
+          <?php printf(esc_html(_n('%s valoración', '%s valoraciones', $count, 'woocommerce')), esc_html($count)); ?>
+        </span>
+      </div>
+    <?php endif; ?>
+
 
     <?php if (have_comments()) : ?>
       <ol class="comment-list">
@@ -76,8 +100,8 @@ if (!comments_open()) {
           'title_reply'         => have_comments() ? esc_html__('Add a review', 'woocommerce') : sprintf(esc_html__('Be the first to review &ldquo;%s&rdquo;', 'woocommerce'), get_the_title()),
           /* translators: %s is product title */
           'title_reply_to'      => esc_html__('Leave a Reply to %s', 'woocommerce'),
-          'title_reply_before'  => '<h3 id="reply-title" class="comment-reply-title" role="heading" aria-level="3">',
-          'title_reply_after'   => '</h3>',
+          'title_reply_before'  => '<span id="reply-title" class="comment-reply-title h4 text-primary mb-3" role="heading" aria-level="3">',
+          'title_reply_after'   => '</span>',
           'comment_notes_after' => '',
           'label_submit'        => esc_html__('Submit', 'woocommerce'),
           'logged_in_as'        => '',
@@ -87,14 +111,14 @@ if (!comments_open()) {
         $name_email_required = (bool) get_option('require_name_email', 1);
         $fields              = array(
           'author' => array(
-            'label'        => __( 'Name', 'woocommerce' ),
+            'label'        => __('Name', 'woocommerce'),
             'type'         => 'text',
             'value'        => $commenter['comment_author'],
             'required'     => $name_email_required,
             'autocomplete' => 'name',
           ),
           'email'  => array(
-            'label'        => __( 'Email', 'woocommerce' ),
+            'label'        => __('Email', 'woocommerce'),
             'type'         => 'email',
             'value'        => $commenter['comment_author_email'],
             'required'     => $name_email_required,
@@ -112,8 +136,8 @@ if (!comments_open()) {
 						$field_html .= '&nbsp;<span class="required">*</span>';
 					}*/
 
-           $field_html .= '</label><input id="' . esc_attr( $key ) . '" name="' . esc_attr( $key ) . '" type="' . esc_attr( $field['type'] ) . '" autocomplete="' . esc_attr( $field['autocomplete'] ) . '" value="' . esc_attr( $field['value'] ) . '" size="30" ' . ( $field['required'] ? 'required' : '' ) . ' /></p>';  
-          
+          $field_html .= '</label><input id="' . esc_attr($key) . '" name="' . esc_attr($key) . '" type="' . esc_attr($field['type']) . '" autocomplete="' . esc_attr($field['autocomplete']) . '" value="' . esc_attr($field['value']) . '" size="30" ' . ($field['required'] ? 'required' : '') . ' /></p>';
+
           $comment_form['fields'][$key] = $field_html;
         }
 
@@ -124,15 +148,31 @@ if (!comments_open()) {
         }
 
         if (wc_review_ratings_enabled()) {
-          $comment_form['comment_field'] = '<div class="comment-form-rating"><label for="rating" id="comment-form-rating-label">' . esc_html__( 'Your rating', 'woocommerce' ) . ( wc_review_ratings_required() ? '&nbsp;<span class="required">*</span>' : '' ) . '</label><select name="rating" id="rating" required>
-						<option value="">' . esc_html__('Rate&hellip;', 'woocommerce') . '</option>
-						<option value="5">' . esc_html__('Perfect', 'woocommerce') . '</option>
-						<option value="4">' . esc_html__('Good', 'woocommerce') . '</option>
-						<option value="3">' . esc_html__('Average', 'woocommerce') . '</option>
-						<option value="2">' . esc_html__('Not that bad', 'woocommerce') . '</option>
-						<option value="1">' . esc_html__('Very poor', 'woocommerce') . '</option>
-					</select></div>';
+          $comment_form['comment_field'] = '
+          <div class="comment-form-rating">
+              <label for="rating" id="comment-form-rating-label">' . esc_html__('Your rating', 'woocommerce') . (wc_review_ratings_required() ? '&nbsp;<span class="required">*</span>' : '') . '</label>
+      
+              <p class="stars">
+                  <span>
+                      <a class="star-1" href="#" data-value="1">★</a>
+                      <a class="star-2" href="#" data-value="2">★</a>
+                      <a class="star-3" href="#" data-value="3">★</a>
+                      <a class="star-4" href="#" data-value="4">★</a>
+                      <a class="star-5" href="#" data-value="5">★</a>
+                  </span>
+              </p>
+      
+              <select name="rating" id="rating" required style="display: none;">
+                  <option value="">' . esc_html__('Rate&hellip;', 'woocommerce') . '</option>
+                  <option value="5">' . esc_html__('Perfect', 'woocommerce') . '</option>
+                  <option value="4">' . esc_html__('Good', 'woocommerce') . '</option>
+                  <option value="3">' . esc_html__('Average', 'woocommerce') . '</option>
+                  <option value="2">' . esc_html__('Not that bad', 'woocommerce') . '</option>
+                  <option value="1">' . esc_html__('Very poor', 'woocommerce') . '</option>
+              </select>
+          </div>';
         }
+
 
         $comment_form['comment_field'] .= '<p class="comment-form-comment"><textarea id="comment" class="form-control" placeholder="' . __('Your review...*', 'bootscore') . '" name="comment" cols="45" rows="8" required></textarea></p>';
 

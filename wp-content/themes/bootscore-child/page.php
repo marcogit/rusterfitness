@@ -48,7 +48,7 @@ get_header();
       </div>
 
       <div class="entry-content">
-        <section class="wp-block-group section-smaller">
+        <section class="wp-block-group section-smaller custom-order-2">
           <div class="wp-block-columns">
             <div class="wp-block-column">
               <?php

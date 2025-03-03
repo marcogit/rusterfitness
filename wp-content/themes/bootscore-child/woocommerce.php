@@ -24,8 +24,56 @@ get_header();
   <div id="primary" class="content-area">
 
     <main id="main" class="site-main">
+      <div class="wp-block-group page-header page-header--nav">
+        <div class="wp-block-columns">
+          <div class="wp-block-column">
+            <?php
+            // Display product categories menu
+            $categories = get_terms(array(
+              'taxonomy' => 'product_cat',
+              'hide_empty' => false,
+            ));
 
-      <div class="wp-block-group page-header page-header--small">
+            if (!empty($categories) && !is_wp_error($categories)) {
+              echo '<nav class="product-categories-menu">';
+              echo '<ul>';
+
+              foreach ($categories as $category) {
+                if ($category->parent == 0) {
+                  echo '<li class="category-item">';
+                  $active_class = (is_tax('product_cat', $category->term_id)) ? ' active' : '';
+                  echo '<a class="category-item--link' . $active_class . '" href="' . get_term_link($category) . '">' . $category->name . '</a>';
+
+                  // Check for subcategories
+                  $subcategories = get_terms(array(
+                    'taxonomy' => 'product_cat',
+                    'hide_empty' => false,
+                    'parent' => $category->term_id,
+                  ));
+
+                  if (!empty($subcategories) && !is_wp_error($subcategories)) {
+                    echo '<ul class="subcategories">';
+                    foreach ($subcategories as $subcategory) {
+                      echo '<li class="subcategory-item">';
+                      echo '<a href="' . get_term_link($subcategory) . '">' . $subcategory->name . '</a>';
+                      echo '</li>';
+                    }
+                    echo '</ul>';
+                  }
+
+                  echo '</li>';
+                }
+              }
+
+              echo '</ul>';
+              echo '</nav>';
+            }
+            ?>
+          </div>
+        </div>
+      </div>
+
+      <div class="wp-block-group section-smaller">
         <div class="wp-block-columns">
           <div class="wp-block-column">
             <?php
@@ -39,8 +87,13 @@ get_header();
       <section class="wp-block-group wp-block-group--shop">
         <div class="wp-block-columns">
           <div class="wp-block-column">
-            <div class="<?= apply_filters('bootscore/class/main/col', 'col'); ?>">
-              <?php woocommerce_content(); ?>
+            <div class="row">
+              <?php if (is_shop() || is_product_category()) : ?>
+                <div class="col"><?php get_sidebar('woocommerce'); ?></div>
+              <?php endif; ?>
+              <div class="<?= apply_filters('bootscore/class/main/col', 'col'); ?>">
+                <?php woocommerce_content(); ?>
+              </div>
             </div>
           </div>
         </div>

@@ -79,9 +79,12 @@ $dark-op: rgba(0,0,0,0.6);
 $dark-op-md: rgba(0,0,0,0.35);
 $dark-op-x: rgba(0,0,0,0.1);
 $warning: #ff0000;
+$warning-op: #ff0000;
 $info: #b2b2b2;
 $base: #3E3A39;
 $bg-shop: #F9F9F9;
+$succes: #22C519;
+$succes-bg: #F1FFF1;
 
 
 $gradient-to-dark: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,1));
@@ -92,6 +95,7 @@ $f-size-base: 1rem; //16px
 $f-size-medium: 1.125rem; //18px
 $f-size-minbig: 1.25rem; //20px
 $f-size-big: 1.5rem; //24px
+$f-size-price: 2rem; //30px
 $f-size-medbig: 2.5rem; //40px
 $f-size-extrabig: 4.375rem; //70px
 $f-size-hero: 12rem; //70px
@@ -128,6 +132,8 @@ $fit-title-space: 1.85rem;
 
 $fit-space-header--top: 15rem;
 $fit-space-header--top-responsive: 4.9rem;
+$fit-space-header--top-nav: 10rem;
+$fit-space-header--top-nav-responsive: 6rem;
 $fit-space-header--top-mobile: 9rem;
 $fit-space-section--standar: 5.313rem; //85px
 $fit-space-section--med: 3.75rem; //60px
@@ -143,5 +149,8 @@ $border-radius--max: 300px;
 $op-min: 0.75;
 $op-med: 0.5;
 $op-max: 0.2;
+
+$shadow-card: 0px 10px 12px -6px rgba(0,0,0,0.45);
+$shadow-card-hover: 0px 10px 18px -6px rgba(0,0,0,0.25);
 
 $transition-normal: all 0.1s ease-in-out;

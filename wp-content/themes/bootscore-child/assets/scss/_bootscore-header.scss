@@ -134,6 +134,14 @@ header {
         }
       }
     }
+
+    &.site-header--transparent {
+      background: transparent;
+
+      &.scrolled {
+        background: $primary;
+      }
+    }
   }
 
   &.entry-header {

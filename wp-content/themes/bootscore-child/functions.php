@@ -135,9 +135,73 @@ function my_acf_init_blocks()
     'category'          => 'ruster-blocks',
     'icon'              => 'slides',
     'keywords'          => array('hero', 'banner'),
-));
+  ));
+
+  // Bloque: Preguntas frecuentes
+  acf_register_block_type(array(
+    'name'              => 'faqs',
+    'title'             => __('Preguntas Frecuentes', 'bootscore-child'),
+    'description'       => __('Bloque con preguntas frecuentes en formato acordeón.'),
+    'render_template'   => '/template-parts/blocks/block-faqs/block-faqs.php',
+    'category'          => 'ruster-blocks',
+    'icon'              => 'editor-help',
+    'keywords'          => array('faq', 'preguntas', 'acordeón'),
+  ));
+
+  // Bloque: Distribuidor Slider
+  acf_register_block_type(array(
+    'name'              => 'distributor-slider',
+    'title'             => __('Distribuidor Slider', 'bootscore-child'),
+    'description'       => __('Bloque de slider para distribuidores', 'bootscore-child'),
+    'render_template'   => 'template-parts/blocks/distributor-slider/distributor-slider.php',
+    'category'          => 'ruster-blocks',
+    'icon'              => 'slides',
+    'keywords'          => array('distributor', 'slider'),
+  ));
+
+  // Bloque: Contador
+  acf_register_block_type(array(
+    'name'              => 'block-counter',
+    'title'             => __('Contador numérico', 'bootscore-child'),
+    'description'       => __('', 'bootscore-child'),
+    'render_template'   => 'template-parts/blocks/block-counter/block-counter.php',
+    'category'          => 'ruster-blocks',
+    'icon'              => 'editor-ol',
+    'keywords'          => array('counter', 'numbers'),
+  ));
+
+  // Bloque: Timeline
+  acf_register_block_type(array(
+    'name'              => 'block-timeline',
+    'title'             => __('Timeline', 'bootscore-child'),
+    'description'       => __('', 'bootscore-child'),
+    'render_template'   => 'template-parts/blocks/block-timeline/block-timeline.php',
+    'category'          => 'ruster-blocks',
+    'icon'              => 'calendar-alt',
+    'keywords'          => array('counter', 'numbers'),
+  ));
 }
 add_action('acf/init', 'my_acf_init_blocks', 10);
+
+function agregar_campos_acf_a_productos($field_groups)
+{
+  foreach ($field_groups as &$group) {
+    if ($group['key'] === 'group_product_info') { // Asegúrate de usar el "key" correcto de ACF
+      $group['location'] = array(
+        array(
+          array(
+            'param'    => 'post_type',
+            'operator' => '==',
+            'value'    => 'product', // Fuerza la asignación al post type "product"
+          ),
+        ),
+      );
+    }
+  }
+  return $field_groups;
+}
+add_filter('acf/get_field_groups', 'agregar_campos_acf_a_productos');
+
 
 /**
  * Color de la categoría
@@ -158,6 +222,133 @@ function get_category_background($term_id)
   $background = get_field('fondo', 'category_' . $term_id);
   return $background ? $background : '#FFFFFF'; // Valor por defecto si no se ha seleccionado un fondo
 }
+
+function custom_product_attributes_display()
+{
+  global $product;
+
+  if (!$product) return;
+
+  echo '<div class="product-attributes">';
+
+  // Obtener atributos del producto
+  $attributes = $product->get_attributes();
+
+  // Mostrar medidas
+  if (isset($attributes['pa_medida'])) :
+    $medidas = wc_get_product_terms($product->get_id(), 'pa_medida', array('fields' => 'all'));
+    if (!empty($medidas)) :
+?>
+      <div class="atri-box">
+        <p><?php _e('Medidas disponibles', 'bootscore-child'); ?></p>
+        <ul class="atri-box--list">
+          <?php foreach ($medidas as $medida) : ?>
+            <li class="product-medidas__item" data-attribute="pa_medida" data-value="<?php echo esc_attr($medida->slug); ?>">
+              <span class="badge"><?php echo esc_html($medida->name); ?></span>
+            </li>
+          <?php endforeach; ?>
+        </ul>
+      </div>
+    <?php
+    endif;
+  endif;
+
+  // Mostrar colores
+  if (isset($attributes['pa_color'])) :
+    $colors = wc_get_product_terms($product->get_id(), 'pa_color', array('fields' => 'all'));
+    if (!empty($colors)) :
+    ?>
+      <div class="atri-box">
+        <p><?php _e('Colores disponibles', 'bootscore-child'); ?></p>
+        <ul class="atri-box--list">
+          <?php foreach ($colors as $color) : ?>
+            <li class="product-colors__item" data-attribute="pa_color" data-value="<?php echo esc_attr($color->slug); ?>">
+              <div title="<?php echo esc_html($color->name); ?>" class="color-swatch" style="background-color: <?php echo esc_attr(get_term_meta($color->term_id, 'color', true)); ?>;"></div>
+            </li>
+          <?php endforeach; ?>
+        </ul>
+      </div>
+<?php
+    endif;
+  endif;
+
+  echo '</div>';
+}
+
+function bootscore_register_woocommerce_sidebar()
+{
+  register_sidebar(array(
+    'name'          => __('WooCommerce Sidebar', 'bootscore-child'),
+    'id'            => 'sidebar-woocommerce',
+    'description'   => __('Widgets in this area will be shown on WooCommerce pages.', 'bootscore-child'),
+    'before_widget' => '<section id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<div class="widget-title">',
+    'after_title'   => '</div>',
+  ));
+}
+add_action('widgets_init', 'bootscore_register_woocommerce_sidebar');
+
+require_once get_stylesheet_directory() . '/woocommerce/class-product-tag-filter-widget.php';
+
+function register_product_tag_filter_widget()
+{
+  register_widget('Product_Tag_Filter_Widget');
+}
+add_action('widgets_init', 'register_product_tag_filter_widget');
+
+function filter_products_by_tags()
+{
+  // Verificar si se han pasado etiquetas
+  if (isset($_GET['tags']) && ! empty($_GET['tags'])) {
+    $tags = $_GET['tags'];
+
+    $args = array(
+      'post_type' => 'product',
+      'posts_per_page' => -1,
+      'tax_query' => array(
+        array(
+          'taxonomy' => 'product_tag',
+          'field' => 'slug',
+          'terms' => $tags,
+        ),
+      ),
+    );
+  } else {
+    // Si no se selecciona ninguna etiqueta, mostrar todos los productos
+    $args = array(
+      'post_type' => 'product',
+      'posts_per_page' => -1,
+    );
+  }
+
+  $query = new WP_Query($args);
+
+  if ($query->have_posts()) {
+    while ($query->have_posts()) {
+      $query->the_post();
+      wc_get_template_part('content', 'product');
+    }
+  } else {
+    echo '<p>' . __('No products found', 'bootscore-child') . '</p>';
+  }
+
+  wp_reset_postdata();
+  wp_die();
+}
+add_action('wp_ajax_filter_products_by_tags', 'filter_products_by_tags');
+add_action('wp_ajax_nopriv_filter_products_by_tags', 'filter_products_by_tags');
+
+// Borra el hook de los productos relacionados
+function remove_woocommerce_related_products()
+{
+  remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
+}
+add_action('init', 'remove_woocommerce_related_products');
+
+
+// Agregar el contenido en la posición 25 dentro del hook woocommerce_single_product_summary
+add_action('woocommerce_single_product_summary', 'custom_product_attributes_display', 25);
 
 if (!function_exists('bootscore_category_badge')) :
   function bootscore_category_badge()
@@ -181,5 +372,47 @@ if (!function_exists('bootscore_category_badge')) :
     }
   }
 endif;
+
+function registrar_cpt_competiciones()
+{
+  $labels = array(
+    'name'               => 'Competiciones',
+    'singular_name'      => 'Competición',
+    'menu_name'          => 'Competiciones',
+    'add_new'            => 'Añadir Nueva',
+    'add_new_item'       => 'Añadir Nueva Competición',
+    'edit_item'          => 'Editar Competición',
+    'new_item'           => 'Nueva Competición',
+    'view_item'          => 'Ver Competición',
+    'search_items'       => 'Buscar Competiciones',
+    'not_found'          => 'No se encontraron competiciones',
+    'not_found_in_trash' => 'No se encontraron competiciones en la papelera'
+  );
+
+  $args = array(
+    'labels'             => $labels,
+    'public'             => true,
+    'menu_icon'          => 'dashicons-awards',
+    'supports'           => array('title', 'editor', 'thumbnail'),
+    'hierarchical'       => false,
+    'has_archive'        => true, // Activar la vista de archivo
+    'rewrite'            => array('slug' => 'competiciones', 'with_front' => false),
+    'show_in_rest'       => true,
+    'query_var'          => true, // Permite el uso de 'paged' en la query
+  );
+
+  register_post_type('competiciones', $args);
+  flush_rewrite_rules();
+}
+add_action('init', 'registrar_cpt_competiciones');
+
+function enqueue_custom_scripts()
+{
+  wp_enqueue_script('custom-js', get_stylesheet_directory_uri() . '/assets/js/custom.js', array('jquery'), null, true);
+  wp_localize_script('custom-js', 'woocommerce_params', array(
+    'ajax_url' => admin_url('admin-ajax.php')
+  ));
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
 
 add_action('acf/init', 'my_acf_init');

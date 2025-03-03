@@ -64,7 +64,7 @@ defined('ABSPATH') || exit;
       <div class="row row-secondary">
         <div class="col-lg-4">
           <div class="bootscore-copyright">
-            <p><span class="cr-symbol">&copy;</span>&nbsp;<?= date('Y'); ?> Ruster Fitness
+            <p><span class="cr-symbol">&copy;</span>&nbsp;<?= date('Y'); ?> <?php _e('Ruster Fitness. Todos los derechos reservados', 'bootscore-child'); ?>
           </div>
           </p>
         </div>

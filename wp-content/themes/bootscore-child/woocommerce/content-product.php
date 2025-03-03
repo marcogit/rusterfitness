@@ -26,7 +26,7 @@ if (! is_a($product, WC_Product::class) || ! $product->is_visible()) {
 }
 ?>
 
-<div class="<?= apply_filters('bootscore/class/woocommerce/col', 'col-6 col-lg-4'); ?>">
+<div class="<?= apply_filters('bootscore/class/woocommerce/col', 'col-12 col-md-6 col-lg-4'); ?>">
   <div <?php wc_product_class('card', $product); ?>>
     <?php
     /**

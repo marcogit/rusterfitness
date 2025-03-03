@@ -21,6 +21,9 @@ defined('ABSPATH') || exit;
 function bootscore_main_col_class_sidebar($string) {
   if (is_active_sidebar('sidebar-1')) {
     // Sidebar is not empty
+    if (is_product()) {
+      return "col-12";
+    }
     return "col-lg-9";
   }
 
