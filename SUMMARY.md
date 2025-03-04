@@ -12,3 +12,7 @@
   * [Campos de Categorización](shop/images-and-media/campos-de-categorizacion/README.md)
     * [Categorías](shop/images-and-media/campos-de-categorizacion/categorias.md)
     * [Etiquetas](shop/images-and-media/campos-de-categorizacion/etiquetas.md)
+
+## Edición
+
+* [Bloques](edicion/bloques.md)
