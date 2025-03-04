@@ -1,14 +1,13 @@
 ---
+icon: pen-paintbrush
 description: >-
   Los bloques de Wordpress permiten crear contenido de forma rápida y
   estilizada.
-icon: pen-paintbrush
 ---
 
 # Bloques
 
-Hemos greado una variada galería de bloques que cumplen con las necesidades de edición de Ruster. Puedes incluir un bloque en una página o entrada de varias formas:\
-
+Hemos greado una variada galería de bloques que cumplen con las necesidades de edición de Ruster. Puedes incluir un bloque en una página o entrada de varias formas:
 
 1. Pulsando "/" en la caja de edición de la página. Se despliega un menú con las últimas opciones disponibles\
    ![](<../.gitbook/assets/image (19).png>)
