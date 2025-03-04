@@ -20,6 +20,6 @@ layout:
 
 # Bienvenidos
 
-### Ir a...
+### Accesos Rápidos
 
-<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Producto</strong></td><td>Configura tu producto ideal</td><td><a href=".gitbook/assets/bg-big-link-02.png">bg-big-link-02.png</a></td><td></td><td><a href="broken-reference">Broken link</a></td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th></th><th data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Producto</strong></td><td><a href="shop/images-and-media/">images-and-media</a></td><td><a href=".gitbook/assets/bg-big-link-02.png">bg-big-link-02.png</a></td><td></td><td><a href="broken-reference">Broken link</a></td></tr></tbody></table>
