@@ -24,6 +24,8 @@
 }
 
 main {
+  overflow: hidden;
+  
   & > .entry-content {
     display: flex;
     flex-direction: column;
@@ -185,6 +187,38 @@ main {
   &.wp-block-group--shop {
     overflow: hidden;
   }
+
+  &.section-financial {
+    @include media-breakpoint-down(md) {
+      text-align: center;
+    }
+
+    .wp-block-image {
+      @include media-breakpoint-down(md) {
+        max-width: 33%;
+      }
+    }
+
+    .wp-block-buttons {
+      @include media-breakpoint-down(md) {
+        justify-content: center;
+      }
+    }
+  }
+
+  &.intro-space {
+    background: url("../img/logo-bg.svg") no-repeat center top;
+  }
+
+  &.section-success-cases-slider {
+    .section-success-cases-slider--intro {
+      margin-bottom: $fit-space--big;
+
+      @include media-breakpoint-down(md) {
+        margin-bottom: 0;
+      }
+    }
+  }
 }
 
 .box-product {
@@ -215,6 +249,13 @@ main {
 }
 
 .wp-block-cover {
+  .wp-block-cover__inner-container {
+    .wp-block-columns {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
   &.alignfull {
     height: 100%;
 

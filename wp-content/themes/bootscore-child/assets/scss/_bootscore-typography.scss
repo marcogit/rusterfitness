@@ -2,7 +2,20 @@
 * Typography
 */
 h1,
-.h1,
+.h1 {
+  color: $dark;
+  font-size: $f-size-extrabig;
+  line-height: $f-lh-titles;
+  margin-block-end: $fit-title-space !important;
+  font-family: $font-family-alternative;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  @include media-breakpoint-down(xl) {
+    font-size: $f-size-medbig;
+  }
+}
+
 h2,
 .h2 {
   color: $dark;

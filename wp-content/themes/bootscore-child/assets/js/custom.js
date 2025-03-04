@@ -83,6 +83,31 @@ jQuery(function ($) {
       },
     });
 
+    // Inicializar bs-swipe para el Casos de éxito Grid slider
+    var swiper = new Swiper(".gridSwiper", {
+      slidesPerView: "auto",
+      centeredSlides: false,
+      spaceBetween: 0,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 15,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+      },
+    });
+
     // Inicializar counterUp
     $(".info-number-counter--numer").each(function () {
       var counter = $(this);

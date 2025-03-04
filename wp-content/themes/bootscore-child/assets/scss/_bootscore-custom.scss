@@ -129,6 +129,10 @@ body {
       background: $dark-op;
     }
 
+    @include media-breakpoint-down(sm) {
+      min-height: 75vh;
+    }
+
     .wp-block-column {
       .page-header--title,
       .page-header--subtitle {
@@ -279,6 +283,12 @@ body {
     .wp-block-columns {
       justify-content: center;
       align-items: center;
+      text-align: center;
+    }
+  }
+
+  &.page-header--centermobile {
+    @include media-breakpoint-down(md) {
       text-align: center;
     }
   }
@@ -581,6 +591,10 @@ nav {
   overflow: hidden;
   padding: $fit-space 0;
 
+  @include media-breakpoint-down(md) {
+    padding: $fit-space--small 0;
+  }
+
   .auto-carrousel-bar__inner {
     display: flex;
     align-items: center;
@@ -599,6 +613,11 @@ nav {
       font-size: $f-size-big;
       gap: $fit-space--small;
       animation: scroll 180s linear infinite;
+      text-transform: uppercase;
+
+      @include media-breakpoint-down(md) {
+        font-size: $f-size-medium;
+      }
 
       li {
         flex: 1;
@@ -620,6 +639,11 @@ nav {
     img {
       filter: invert(1);
     }
+  }
+
+  &.option-03 {
+    background: $bg-shop;
+    color: $dark;
   }
 }
 
@@ -700,6 +724,52 @@ nav {
   }
 }
 
+//Block - Grid Swiper
+.gridSwiper {
+  @include media-breakpoint-down(sm) {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    padding-bottom: $fit-space--big;
+
+    .swiper-slide {
+      @include media-breakpoint-down(sm) {
+        padding-left: $fit-space;
+        max-width: 90%;
+      }
+    }
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 40px;
+    height: 40px;
+    background: $primary;
+    border-radius: $border-radius--max;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::after {
+      color: white;
+      font-size: $f-size-small;
+    }
+
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+
+  .swiper-pagination {
+    display: none;
+    @include media-breakpoint-down(sm) {
+      display: block;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: $info;
+    }
+  }
+}
+
 .wp-block-cover {
   .distributorsSwiper {
     border-bottom: $light-op solid 1px;
@@ -776,7 +846,8 @@ nav {
   &__title {
     color: white;
 
-    h2 {
+    h2,
+    .h2 {
       color: $light;
       font-size: $f-size-hero;
       line-height: $f-lh-hero;
@@ -787,6 +858,25 @@ nav {
 
       strong {
         color: $primary;
+      }
+    }
+
+    h3,
+    .h3 {
+      color: $light;
+      font-size: $f-size-extrabig;
+      line-height: $f-lh-titles;
+      margin-block-end: $fit-title-space !important;
+      font-family: $font-family-alternative;
+      text-transform: uppercase;
+      font-weight: 700;
+
+      @include media-breakpoint-down(xl) {
+        font-size: $f-size-medbig;
+      }
+
+      @include media-breakpoint-down(md) {
+        font-size: $f-size-big;
       }
     }
   }
@@ -1362,6 +1452,69 @@ nav {
       box-shadow: $shadow-card-hover;
     }
   }
+
+  &.card-item {
+    background: $dark;
+    border-radius: 0;
+    border: none;
+
+    .card-header {
+      padding: 0;
+      border-radius: 0;
+      border: none;
+      overflow: hidden;
+      padding-bottom: 60%;
+      background-position: center center;
+      background-size: cover;
+
+      @include media-breakpoint-down(md) {
+        padding-bottom: 100%;
+      }
+    }
+
+    .card-body {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      top: 0;
+      padding: $fit-space;
+      background: $dark-op;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      align-items: start;
+      transition: $transition-normal;
+
+      .card-title,
+      .card-slogan {
+        color: white;
+        margin-bottom: 0 !important;
+      }
+
+      .card-date {
+        position: absolute;
+        right: $fit-space;
+        top: $fit-space;
+        font-family: $font-family-alternative;
+        color: white;
+        font-size: $f-size-min;
+        text-transform: uppercase;
+      }
+    }
+
+    &:hover {
+      .card-header {
+        img {
+          transform: scale(1.05);
+        }
+      }
+      .card-body {
+        background: $dark-op-md;
+      }
+    }
+  }
 }
 
 // Info
@@ -1381,8 +1534,22 @@ nav {
   justify-content: center;
   gap: $fit-space--small;
 
-  .info-number-counter--numer {
+  .info-number-counter--number {
     margin-bottom: 0 !important;
+  }
+
+  &.style-gray {
+    .info-number-counter--number {
+      color: $info;
+      font-size: $f-size-extrabig;
+    }
+
+    .info-number-counter--text {
+      text-align: center;
+      font-family: $font-family-base;
+      font-size: $f-size-base;
+      text-transform: initial;
+    }
   }
 }
 
@@ -1458,7 +1625,60 @@ nav {
   .grw-review {
     padding: 0.5em !important;
   }
-} 
+}
+
+//Steps
+.steps {
+  padding-top: $fit-space--medium;
+
+  @include media-breakpoint-down(md) {
+    padding-top: $fit-space--small;
+  }
+
+  .step {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: $fit-space--small;
+    margin-bottom: $fit-space--big-x;
+
+    @include media-breakpoint-down(md) {
+      margin-bottom: $fit-space--big;
+    }
+
+    .step-number {
+      width: 60px;
+      height: 60px;
+      flex: 0 0 60px;
+      flex-wrap: wrap;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: $primary;
+      color: white;
+      border-radius: $border-radius--max;
+      margin-top: -5px;
+
+      @include media-breakpoint-down(md) {
+        width: 45px;
+        height: 45px;
+        flex: 0 0 45px;
+      }
+
+      span {
+        color: white !important;
+        margin-bottom: 0 !important;
+        color: white !important;
+      }
+    }
+
+    .step-content {
+      .step-content--title {
+        margin-bottom: $fit-space--small-x !important;
+      }
+    }
+  }
+}
 
 //Product
 .product {
@@ -1998,7 +2218,6 @@ nav {
     @extend .btn;
     @extend .btn-small;
     @extend .btn-primary;
-
   }
 
   .wc-block-components-checkout-order-summary__title-text {
@@ -2052,7 +2271,6 @@ nav {
 .heateor_sl_login_container {
   display: flex;
   flex-direction: column;
-  
 
   .heateor_sl_optin_container {
     order: 2;
@@ -2072,7 +2290,7 @@ nav {
   .heateor_sl_title {
     display: none;
   }
-} 
+}
 
 .woocommerce-form {
   .woocommerce-privacy-policy-text {

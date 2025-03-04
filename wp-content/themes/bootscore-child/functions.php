@@ -135,6 +135,8 @@ function my_acf_init_blocks()
     'category'          => 'ruster-blocks',
     'icon'              => 'slides',
     'keywords'          => array('hero', 'banner'),
+    'supports'          => array('align' => true),
+    'mode'              => 'edit',
   ));
 
   // Bloque: Preguntas frecuentes
@@ -179,6 +181,40 @@ function my_acf_init_blocks()
     'category'          => 'ruster-blocks',
     'icon'              => 'calendar-alt',
     'keywords'          => array('counter', 'numbers'),
+  ));
+
+  // Bloque: Steps
+  acf_register_block_type(array(
+    'name'              => 'steps',
+    'title'             => __('Pasos', 'bootscore-child'),
+    'description'       => __('Bloque para mostrar pasos', 'bootscore-child'),
+    'render_template'   => 'template-parts/blocks/steps/steps.php',
+    'category'          => 'ruster-blocks',
+    'icon'              => 'list-view',
+    'keywords'          => array('steps', 'pasos'),
+  ));
+
+  // Bloque: Casos de éxito
+  acf_register_block_type(array(
+    'name'              => 'success_cases_slider',
+    'title'             => __('Casos de Éxito - Grid', 'bootscore-child'),
+    'description'       => __('Muestra un slider de Casos de Éxito filtrado por Espacio', 'bootscore-child'),
+    'render_template'   => 'template-parts/blocks/block-success_cases/block-success_cases.php',
+    'category'          => 'ruster-blocks',
+    'icon'              => 'awards',
+    'keywords'          => array('casos de éxito', 'slider', 'espacios'),
+    'supports'          => array('align' => true),
+    'mode'              => 'edit',
+  ));
+  // Bloque: Competiciones
+  acf_register_block_type(array(
+    'name'              => 'competitions',
+    'title'             => __('Competiciones', 'bootscore-child'),
+    'description'       => __('Bloque para mostrar competiciones', 'bootscore-child'),
+    'render_template'   => 'template-parts/blocks/competitions/competitions.php',
+    'category'          => 'ruster-blocks',
+    'icon'              => 'awards',
+    'keywords'          => array('competitions', 'competiciones'),
   ));
 }
 add_action('acf/init', 'my_acf_init_blocks', 10);
@@ -405,6 +441,42 @@ function registrar_cpt_competiciones()
   flush_rewrite_rules();
 }
 add_action('init', 'registrar_cpt_competiciones');
+
+function cpt_espacios()
+{
+  $args = array(
+    'labels'             => array(
+      'name'          => 'Espacios',
+      'singular_name' => 'Espacio',
+      'menu_name'     => 'Espacios',
+    ),
+    'public'             => true,
+    'has_archive'        => true,
+    'menu_icon'          => 'dashicons-location',
+    'supports'           => array('title', 'editor', 'thumbnail'),
+    'show_in_rest'       => true,
+  );
+  register_post_type('espacios', $args);
+}
+add_action('init', 'cpt_espacios');
+
+function cpt_casos_exito()
+{
+  $args = array(
+    'labels'             => array(
+      'name'          => 'Casos de Éxito',
+      'singular_name' => 'Caso de Éxito',
+      'menu_name'     => 'Casos de Éxito',
+    ),
+    'public'             => true,
+    'has_archive'        => true,
+    'menu_icon'          => 'dashicons-awards',
+    'supports'           => array('title', 'editor', 'thumbnail'),
+    'show_in_rest'       => true,
+  );
+  register_post_type('casos_exito', $args);
+}
+add_action('init', 'cpt_casos_exito');
 
 function enqueue_custom_scripts()
 {

@@ -10,6 +10,8 @@ if ($variant == 'Opción 01') {
     $variant_class = 'option-01';
 } elseif ($variant == 'Opción 02') {
     $variant_class = 'option-02';
+} elseif ($variant == 'Opción 03') {
+    $variant_class = 'option-03';
 }
 ?>
 
