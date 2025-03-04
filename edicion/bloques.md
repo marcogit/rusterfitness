@@ -2,6 +2,7 @@
 description: >-
   Los bloques de Wordpress permiten crear contenido de forma rápida y
   estilizada.
+icon: pen-paintbrush
 ---
 
 # Bloques
