@@ -42,12 +42,12 @@
               <span class="h4 wp-block-heading has-text-align-center d-block"><?php _e('Otras Competiciones', 'text-domain'); ?></span>
               <div class="row row-cols-1 row-cols-md-3">
                 <?php
-                $related_competitions = new WP_Query(array(
+                $related_competiciones = new WP_Query(array(
                   'post_type'      => 'competiciones',
                   'posts_per_page' => 3,
-                  'post__not_in'   => array(get_the_ID()),
                   'orderby'        => 'date',
-                  'order'          => 'DESC'
+                  'order'          => 'DESC',
+                  'post__not_in'   => array(get_the_ID()),
                 ));
 
                 if ($related_competitions->have_posts()) :
@@ -57,7 +57,7 @@
                       <a class="card card-comp" href="<?php the_permalink(); ?>">
                         <?php if (get_field('logo')) : ?>
                           <div class="card-header">
-                            <img src="<?php the_field('logo'); ?>" class="card-img" alt="Logo de <?php the_title(); ?>">
+                          <img src="<?php echo esc_url(get_field('logo')['url']); ?>" class="card-img" alt="Logo de <?php the_title(); ?>">
                           </div>
                         <?php endif; ?>
                         <div class="card-body">

@@ -211,7 +211,7 @@ function my_acf_init_blocks()
     'name'              => 'competitions',
     'title'             => __('Competiciones', 'bootscore-child'),
     'description'       => __('Bloque para mostrar competiciones', 'bootscore-child'),
-    'render_template'   => 'template-parts/blocks/competitions/competitions.php',
+    'render_template'   => 'template-parts/blocks/block-competitions/block-competitions.php',
     'category'          => 'ruster-blocks',
     'icon'              => 'awards',
     'keywords'          => array('competitions', 'competiciones'),
@@ -409,38 +409,37 @@ if (!function_exists('bootscore_category_badge')) :
   }
 endif;
 
-function registrar_cpt_competiciones()
-{
+// Competiciones
+function registrar_cpt_competiciones() {
   $labels = array(
-    'name'               => 'Competiciones',
-    'singular_name'      => 'Competición',
-    'menu_name'          => 'Competiciones',
-    'add_new'            => 'Añadir Nueva',
-    'add_new_item'       => 'Añadir Nueva Competición',
-    'edit_item'          => 'Editar Competición',
-    'new_item'           => 'Nueva Competición',
-    'view_item'          => 'Ver Competición',
-    'search_items'       => 'Buscar Competiciones',
-    'not_found'          => 'No se encontraron competiciones',
-    'not_found_in_trash' => 'No se encontraron competiciones en la papelera'
+      'name'               => 'Competiciones',
+      'singular_name'      => 'Competición',
+      'menu_name'          => 'Competiciones',
+      'add_new'            => 'Añadir Nueva',
+      'add_new_item'       => 'Añadir Nueva Competición',
+      'edit_item'          => 'Editar Competición',
+      'new_item'           => 'Nueva Competición',
+      'view_item'          => 'Ver Competición',
+      'search_items'       => 'Buscar Competiciones',
+      'not_found'          => 'No se encontraron competiciones',
   );
 
   $args = array(
-    'labels'             => $labels,
-    'public'             => true,
-    'menu_icon'          => 'dashicons-awards',
-    'supports'           => array('title', 'editor', 'thumbnail'),
-    'hierarchical'       => false,
-    'has_archive'        => true, // Activar la vista de archivo
-    'rewrite'            => array('slug' => 'competiciones', 'with_front' => false),
-    'show_in_rest'       => true,
-    'query_var'          => true, // Permite el uso de 'paged' en la query
+      'labels'             => $labels,
+      'public'             => true,
+      'menu_icon'          => 'dashicons-awards',
+      'supports'           => array('title', 'editor', 'thumbnail'),
+      'hierarchical'       => false,
+      'has_archive'        => true, // Activa la vista de archivo
+      'rewrite'            => array('slug' => 'competiciones', 'with_front' => false),
+      'show_in_rest'       => true,
+      'query_var'          => true,
   );
 
   register_post_type('competiciones', $args);
-  flush_rewrite_rules();
 }
 add_action('init', 'registrar_cpt_competiciones');
+
 
 function cpt_espacios()
 {

@@ -33,16 +33,13 @@ if (!$query->have_posts()) {
     <div class="wp-block-columns mt-5">
         <div class="wp-block-column">
             <div class="row row-cols-1 row-cols-md-3">
-                <?php while ($query->have_posts()) : $query->the_post(); ?>
-                    <?php
-                    global $post;
-                    setup_postdata($post); // Asegurar que los campos ACF se carguen correctamente
-
-                    // Obtener los valores de ACF dentro del loop
+                <?php while ($query->have_posts()) : $query->the_post();
+                    setup_postdata($post);
                     $logo = get_field('logo');
-                    $ubicacion = get_field('ubicacion');
-                    $fecha = get_field('fecha_competicion');
-                    ?>
+                    $ubication = get_field('ubication');
+                    $date = get_field('date');
+
+                ?>
                     <div class="col">
                         <a class="card card-comp" href="<?php the_permalink(); ?>">
                             <div class="card-header">
@@ -54,17 +51,17 @@ if (!$query->have_posts()) {
                                 <span class="card-title"><?php the_title(); ?></span>
                             </div>
                             <div class="card-footer">
-                                <?php if ($ubicacion): ?>
+                                <?php if ($ubication): ?>
                                     <span>
                                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/icon-map.svg" alt="Ubicación">
-                                        <?php echo esc_html($ubicacion); ?>
+                                        <?php echo esc_html($ubication); ?>
                                     </span>
                                 <?php endif; ?>
 
-                                <?php if ($fecha): ?>
+                                <?php if ($date): ?>
                                     <span>
                                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/icon-calendar.svg" alt="Fecha">
-                                        <?php echo esc_html(date_i18n('d.m.Y', strtotime($fecha))); ?>
+                                        <?php echo esc_html(date_i18n('d.m.Y', strtotime($date))); ?>
                                     </span>
                                 <?php endif; ?>
                             </div>
