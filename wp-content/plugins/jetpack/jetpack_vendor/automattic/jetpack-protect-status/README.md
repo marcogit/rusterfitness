@@ -1,0 +1,2 @@
+# jetpack-protect-status
+
