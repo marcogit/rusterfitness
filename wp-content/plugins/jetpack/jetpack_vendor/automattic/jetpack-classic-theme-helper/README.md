@@ -1,2 +1,0 @@
-# jetpack-classic-theme-helper
-

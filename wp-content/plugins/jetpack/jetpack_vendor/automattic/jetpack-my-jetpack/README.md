@@ -1,2 +1,0 @@
-# jetpack-my-jetpack
-

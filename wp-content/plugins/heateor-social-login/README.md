@@ -1,2 +1,0 @@
-# heateor-social-login
-
